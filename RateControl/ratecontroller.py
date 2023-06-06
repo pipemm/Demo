@@ -41,7 +41,7 @@ class RateController():
         self.__sleep(wait_second)
     
     def submit(self,volume=1):
-        if volume <=0:
+        if volume < 1:
             volume = 1
         while True:
             if self.__rate() <= 0:

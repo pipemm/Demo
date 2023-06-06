@@ -9,7 +9,7 @@ class RateController():
         if limit <=0:
             limit = 3500
         self.__delta = timedelta(seconds=period)
-        self.__limit = 3500
+        self.__limit = limit
         self.__book  = {}
         self.__now   = datetime.now
         self.__sleep = sleep

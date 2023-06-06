@@ -1,15 +1,3 @@
-#!/usr/bin/python3
-
-def getlogger():
-    from logging import basicConfig, root, getLogger, CRITICAL, ERROR, WARNING, INFO, DEBUG, NOTSET
-    from sys import stdout
-    FORMAT = '%(asctime)s p%(process)d t%(thread)d %(levelname)s %(name)s %(message)s'
-    basicConfig(format=FORMAT, stream = stdout)
-    logger = getLogger('ratecontroller')
-    logger.setLevel(INFO)
-    return logger
-
-logger = getlogger()
 
 class RateController():
     
@@ -65,49 +53,5 @@ class RateController():
                 break
             self.__sleep_till_next_check()
 
-def job_generator(ceiling=1000):
-    from random import randint
-    if ceiling < 1:
-        ceiling = 1000
-    while True:
-        yield randint(1, ceiling)
+rate_controller_sample = RateController(limit=3500,period=1)
 
-rc   = RateController()
-jobs = job_generator()
-
-from threading import Thread, Lock
-lock_job = Lock()
-lock_rc  = Lock()
-
-def target_callable(jobs):
-    while True:
-        try:
-            with lock_job:
-                job = next(jobs)
-        except StopIteration as e:
-            logger.info('Stop Interation')
-            break
-        logger.info('submitting {}'.format(job))
-        with lock_rc:
-            rc.submit(job)
-        logger.info('submittted {}'.format(job))
-
-def test1():
-    for job in jobs:
-        logger.info('submitting {}'.format(job))
-        rc.submit(job)
-        logger.info('submittted {}'.format(job))
-
-def test2():
-    threads = [Thread(target=target_callable,args=(jobs,)) for _ in range(10)]
-    for thread in threads:
-        thread.start()
-    for thread in threads:
-        thread.join()
-
-def main():
-    test2()
-
-if __name__ == '__main__':
-    main()
-        

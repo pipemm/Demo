@@ -1,0 +1,549 @@
+
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:CN = email-smtp.eu-west-1.amazonaws.com
+   i:C = US, O = Amazon, CN = Amazon RSA 2048 M01
+ 1 s:C = US, O = Amazon, CN = Amazon RSA 2048 M01
+   i:C = US, O = Amazon, CN = Amazon Root CA 1
+ 2 s:C = US, O = Amazon, CN = Amazon Root CA 1
+   i:C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", CN = Starfield Services Root Certificate Authority - G2
+ 3 s:C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", CN = Starfield Services Root Certificate Authority - G2
+   i:C = US, O = "Starfield Technologies, Inc.", OU = Starfield Class 2 Certification Authority
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIGRDCCBSygAwIBAgIQCMezOigf6ZnH1EGjS35P5DANBgkqhkiG9w0BAQsFADA8
+MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRwwGgYDVQQDExNBbWF6b24g
+UlNBIDIwNDggTTAxMB4XDTIzMDMxNDAwMDAwMFoXDTI0MDIyMzIzNTk1OVowLTEr
+MCkGA1UEAxMiZW1haWwtc210cC5ldS13ZXN0LTEuYW1hem9uYXdzLmNvbTCCASIw
+DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALn+Ee6TG+oupsSAG6jf9cm5RztO
+NgBGXwKhfXisPMAQWn69qf7L1XZ7QO7ya0TL3KAmoDFaMB5cZ5zdeFzSh8DyiEBT
+0sansAf0Zop8I5ManXz7QAbI7lpFQfTENbt+OYfH1fyjKS6dB3ydwPGWAoEDRDQN
+W3BZLKmA4IDwN2FtaPRuWgNeICZvohEv463FWROhVL6H896qvI+cZVw9la+YzVOT
+1/bgHnzg70CACrMelvHSk70SeT8gQtMa5tJF5rRYGQlPuEXmDtgnvp2g2tRFVe1T
+s8NSgRm+X7dxYIon5iz00DYoqElxILPyTIcJCruzijxzKq+T2uc9Cr0WQMUCAwEA
+AaOCA08wggNLMB8GA1UdIwQYMBaAFIG4DmOKiRIY5fo7O1CVn+blkBOFMB0GA1Ud
+DgQWBBQymbEZ93YlZHGkTlpPyH2ptvv8/TCBgQYDVR0RBHoweIInZW1haWwtc210
+cC1maXBzLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tgikqLmVtYWlsLXNtdHAuZXUt
+d2VzdC0xLnZwY2UuYW1hem9uYXdzLmNvbYIiZW1haWwtc210cC5ldS13ZXN0LTEu
+YW1hem9uYXdzLmNvbTAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUH
+AwEGCCsGAQUFBwMCMDsGA1UdHwQ0MDIwMKAuoCyGKmh0dHA6Ly9jcmwucjJtMDEu
+YW1hem9udHJ1c3QuY29tL3IybTAxLmNybDATBgNVHSAEDDAKMAgGBmeBDAECATB1
+BggrBgEFBQcBAQRpMGcwLQYIKwYBBQUHMAGGIWh0dHA6Ly9vY3NwLnIybTAxLmFt
+YXpvbnRydXN0LmNvbTA2BggrBgEFBQcwAoYqaHR0cDovL2NydC5yMm0wMS5hbWF6
+b250cnVzdC5jb20vcjJtMDEuY2VyMAwGA1UdEwEB/wQCMAAwggF9BgorBgEEAdZ5
+AgQCBIIBbQSCAWkBZwB1AO7N0GTV2xrOxVy3nbTNE6Iyh0Z8vOzew1FIWUZxH7Wb
+AAABhuJmI6IAAAQDAEYwRAIgB1ZyxZzLbWvrKpPGjYggZ7h9jrZ07/n/x4nnCMCA
+/ZgCIH9hEucw+NVaFVz0zkfRKzT6tt3Ily6JdWjqQiowbNANAHYAc9meiRtMlnig
+IH1HneayxhzQUV5xGSqMa4AQesF3crUAAAGG4mYkAgAABAMARzBFAiEA1V/s0CgJ
+musEsZLCedRjANLi4vEH7tTYqjX+zMvvRPICIE8YJN6Z6IbIroaNHWwULh/YV62K
+DGvx7REtkJCOlBsjAHYASLDja9qmRzQP5WoC+p0w6xxSActW3SyB2bu/qznYhHMA
+AAGG4mYjzQAABAMARzBFAiEAoR9C8UAMYiOdKMV7skfimnpxDdjeRSP5ICh/ZiZu
+1FsCID1NTmEdgENhh9gG6iwsrVO2WpsAnDPc7mca/LHSvKjrMA0GCSqGSIb3DQEB
+CwUAA4IBAQAUyNlpQG2GdmWd3vaAf3E9vDbvzJAuW8ojqgGuXNDPsFAXMcTPp2Ws
+IPKSv5fncup9SRgcVl+2kzSW4GX53RA5A813G907lX+6pk9HqsiMlabHlslpQpci
+nfMl0GUqUWLQGbFsWk9X6neHM/4k9pPIbBDcXQhuN/UNkNG8V4kvoH6IzWJML0Mo
+ipugOsPq7BPdX84xjCujeooBVqtmApbWr8l+OnjO1rFxymozfhSFPqgBom7ill+L
+0scqh+TSSKDv6GmUQ/WOdnRQQfO10DDYbtprv6qv1NEd5iUQwRJdg3BjH1+EUe3m
+1iF3fNy1UtnYEGpNU32YYT8NWMsjRYiN
+-----END CERTIFICATE-----
+subject=CN = email-smtp.eu-west-1.amazonaws.com
+
+issuer=C = US, O = Amazon, CN = Amazon RSA 2048 M01
+
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: RSA-PSS
+Server Temp Key: ECDH, P-256, 256 bits
+---
+SSL handshake has read 5761 bytes and written 495 bytes
+Verification: OK
+---
+New, TLSv1.2, Cipher is ECDHE-RSA-AES256-GCM-SHA384
+Server public key is 2048 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES256-GCM-SHA384
+    Session-ID: B7470D29F5F409AAF2CCA15E012DEE4768AAECF912CD67A2BD69F1B5B3A1C555
+    Session-ID-ctx: 
+    Master-Key: B4932060A81CFCBA0522D77E4A60CE4FD61B36AD2729F83FB9B69FB4F577D019CD8692AD62D75F7EAFEA0F4C4307EB72
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    Start Time: 1689337890
+    Timeout   : 7200 (sec)
+    Verify return code: 0 (ok)
+    Extended master secret: yes
+---
+250-email-smtp.amazonaws.com
+250-8BITMIME
+250-STARTTLS
+250-AUTH PLAIN LOGIN
+250 Ok
+221 Bye
+closed
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:CN = email-smtp.eu-west-1.amazonaws.com
+   i:C = US, O = Amazon, CN = Amazon RSA 2048 M02
+ 1 s:C = US, O = Amazon, CN = Amazon RSA 2048 M02
+   i:C = US, O = Amazon, CN = Amazon Root CA 1
+ 2 s:C = US, O = Amazon, CN = Amazon Root CA 1
+   i:C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", CN = Starfield Services Root Certificate Authority - G2
+ 3 s:C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", CN = Starfield Services Root Certificate Authority - G2
+   i:C = US, O = "Starfield Technologies, Inc.", OU = Starfield Class 2 Certification Authority
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIF8zCCBNugAwIBAgIQAQvQkSAWXm9K8GEMcTy8EjANBgkqhkiG9w0BAQsFADA8
+MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRwwGgYDVQQDExNBbWF6b24g
+UlNBIDIwNDggTTAyMB4XDTIzMDIyMzAwMDAwMFoXDTI0MDMyMzIzNTk1OVowLTEr
+MCkGA1UEAxMiZW1haWwtc210cC5ldS13ZXN0LTEuYW1hem9uYXdzLmNvbTCCASIw
+DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALKBvcVQZcZRZppS/S250jg+c8xo
+ublPmyN+M7SvvBd/bxbfMlAEO4dvJN1nHi2HdM8fnd7jpneBBw1sDxrUST//3lBn
+PX1HisetKfrAbzyL9S1ZoVUl6ZxLGV9nSaT+ve5DfygF8VJkrGYurzFhz6cVv2OA
+hXBGjSMixGEgV8m+9zCdlDcYPAvyvo0KOtyhWG1uTIvT9Eu8jOnpgMHj8HKXGN95
+oYaQupELGboUnAuY8b7zsemou+s4WNLK3v+mP+aOn53CYRPONsDAH+AJ3u4CX6Fx
+GMB9clHFsJOHhxp6rjVoUEk4ktLRpiGnjrN/tfF0rDUsZEVAMC71OmZwqjMCAwEA
+AaOCAv4wggL6MB8GA1UdIwQYMBaAFMAxUs1aUMOCfHRxzsvpnPl664LiMB0GA1Ud
+DgQWBBQJQMbw7euuZ90LwP1FWl0JJrahmTAtBgNVHREEJjAkgiJlbWFpbC1zbXRw
+LmV1LXdlc3QtMS5hbWF6b25hd3MuY29tMA4GA1UdDwEB/wQEAwIFoDAdBgNVHSUE
+FjAUBggrBgEFBQcDAQYIKwYBBQUHAwIwOwYDVR0fBDQwMjAwoC6gLIYqaHR0cDov
+L2NybC5yMm0wMi5hbWF6b250cnVzdC5jb20vcjJtMDIuY3JsMBMGA1UdIAQMMAow
+CAYGZ4EMAQIBMHUGCCsGAQUFBwEBBGkwZzAtBggrBgEFBQcwAYYhaHR0cDovL29j
+c3AucjJtMDIuYW1hem9udHJ1c3QuY29tMDYGCCsGAQUFBzAChipodHRwOi8vY3J0
+LnIybTAyLmFtYXpvbnRydXN0LmNvbS9yMm0wMi5jZXIwDAYDVR0TAQH/BAIwADCC
+AYEGCisGAQQB1nkCBAIEggFxBIIBbQFrAHcA7s3QZNXbGs7FXLedtM0TojKHRny8
+7N7DUUhZRnEftZsAAAGGe7NBFwAABAMASDBGAiEAqJOmVnbXmxVg54m9O3ekKbRF
+fB+ajH3U1FFXhi9U590CIQDVGmlToXpSpJcUtn7Dalk/aW6xHU6hdS+iy3yBPVBw
+eAB3AHPZnokbTJZ4oCB9R53mssYc0FFecRkqjGuAEHrBd3K1AAABhnuzQVAAAAQD
+AEgwRgIhALY8B2/NQmlM1l95b4exY+iejQAxI64aVoxRg9u7Wk2zAiEAgg+SNplx
+S+4+1vC3fra6qX9lYTPFy4KvlJNZDnl65f8AdwBIsONr2qZHNA/lagL6nTDrHFIB
+y1bdLIHZu7+rOdiEcwAAAYZ7s0EQAAAEAwBIMEYCIQDbKTdgOZ5yDlShjzWIftsI
+jXeWMQVvDj1dLSSsi4B9UQIhAO6lDnkMq7b3Cgq8nGlbVMxkn7fC/XmuOdzdJbvK
+WQZ/MA0GCSqGSIb3DQEBCwUAA4IBAQCh4vSfzGOdWqUI8UzVhkoAA8F5NN/UK1N0
+ceM0OqVKHNr0AUqZlLyq0Eto36yPksan42jrFMgTgN4Qm1Hf7XZRMX73B+y5L/0a
+9MzFN3La6z5Z1zh6L7xpUwMHXDvYvwWXcRKfCVoJ9K+F644Mw0Hk3YiiuLQWVywQ
+5wd/SSH3YUAYjJGqpDoZ8+UwKlZlDsn2U/GK+v4jCPCpXCzxYfRUtUzT4i3jsBHa
+FJfJ0LvONXBu2cgE2f6ZCubtmv7aZjFaU1D05f4JRYrpCktd25wFZGU0SwMFz7nP
+dhrBhAnIxQomk0UST1gcxjAtPIsQ5i3NdscmCV5HrPUw8aiD9LYE
+-----END CERTIFICATE-----
+subject=CN = email-smtp.eu-west-1.amazonaws.com
+
+issuer=C = US, O = Amazon, CN = Amazon RSA 2048 M02
+
+---
+No client certificate CA names sent
+Peer signing digest: SHA512
+Peer signature type: RSA
+Server Temp Key: ECDH, P-256, 256 bits
+---
+SSL handshake has read 5484 bytes and written 462 bytes
+Verification: OK
+---
+New, TLSv1.2, Cipher is ECDHE-RSA-AES128-GCM-SHA256
+Server public key is 2048 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES128-GCM-SHA256
+    Session-ID: 4DE1D47141B746514214772F1DD2C152CEACE14172E5CDEE1B68A94CDC826C09
+    Session-ID-ctx: 
+    Master-Key: A6EDE0A761CC4442FA3C0F862698666B15B5077E59B8B54205309BDC31DE2377952313A60DB085ABD7D44C3985C9FB15
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    Start Time: 1689337890
+    Timeout   : 7200 (sec)
+    Verify return code: 0 (ok)
+    Extended master secret: no
+---
+220 email-smtp.amazonaws.com ESMTP SimpleEmailService-d-DNRE99X70 vyFOS2OK4rBNauaN9zmB
+250-email-smtp.amazonaws.com
+250-8BITMIME
+250-AUTH PLAIN LOGIN
+250 Ok
+221 Bye
+closed
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:CN = email-smtp.eu-west-1.amazonaws.com
+   i:C = US, O = Amazon, CN = Amazon RSA 2048 M01
+ 1 s:C = US, O = Amazon, CN = Amazon RSA 2048 M01
+   i:C = US, O = Amazon, CN = Amazon Root CA 1
+ 2 s:C = US, O = Amazon, CN = Amazon Root CA 1
+   i:C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", CN = Starfield Services Root Certificate Authority - G2
+ 3 s:C = US, ST = Arizona, L = Scottsdale, O = "Starfield Technologies, Inc.", CN = Starfield Services Root Certificate Authority - G2
+   i:C = US, O = "Starfield Technologies, Inc.", OU = Starfield Class 2 Certification Authority
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIGRDCCBSygAwIBAgIQCMezOigf6ZnH1EGjS35P5DANBgkqhkiG9w0BAQsFADA8
+MQswCQYDVQQGEwJVUzEPMA0GA1UEChMGQW1hem9uMRwwGgYDVQQDExNBbWF6b24g
+UlNBIDIwNDggTTAxMB4XDTIzMDMxNDAwMDAwMFoXDTI0MDIyMzIzNTk1OVowLTEr
+MCkGA1UEAxMiZW1haWwtc210cC5ldS13ZXN0LTEuYW1hem9uYXdzLmNvbTCCASIw
+DQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALn+Ee6TG+oupsSAG6jf9cm5RztO
+NgBGXwKhfXisPMAQWn69qf7L1XZ7QO7ya0TL3KAmoDFaMB5cZ5zdeFzSh8DyiEBT
+0sansAf0Zop8I5ManXz7QAbI7lpFQfTENbt+OYfH1fyjKS6dB3ydwPGWAoEDRDQN
+W3BZLKmA4IDwN2FtaPRuWgNeICZvohEv463FWROhVL6H896qvI+cZVw9la+YzVOT
+1/bgHnzg70CACrMelvHSk70SeT8gQtMa5tJF5rRYGQlPuEXmDtgnvp2g2tRFVe1T
+s8NSgRm+X7dxYIon5iz00DYoqElxILPyTIcJCruzijxzKq+T2uc9Cr0WQMUCAwEA
+AaOCA08wggNLMB8GA1UdIwQYMBaAFIG4DmOKiRIY5fo7O1CVn+blkBOFMB0GA1Ud
+DgQWBBQymbEZ93YlZHGkTlpPyH2ptvv8/TCBgQYDVR0RBHoweIInZW1haWwtc210
+cC1maXBzLmV1LXdlc3QtMS5hbWF6b25hd3MuY29tgikqLmVtYWlsLXNtdHAuZXUt
+d2VzdC0xLnZwY2UuYW1hem9uYXdzLmNvbYIiZW1haWwtc210cC5ldS13ZXN0LTEu
+YW1hem9uYXdzLmNvbTAOBgNVHQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUH
+AwEGCCsGAQUFBwMCMDsGA1UdHwQ0MDIwMKAuoCyGKmh0dHA6Ly9jcmwucjJtMDEu
+YW1hem9udHJ1c3QuY29tL3IybTAxLmNybDATBgNVHSAEDDAKMAgGBmeBDAECATB1
+BggrBgEFBQcBAQRpMGcwLQYIKwYBBQUHMAGGIWh0dHA6Ly9vY3NwLnIybTAxLmFt
+YXpvbnRydXN0LmNvbTA2BggrBgEFBQcwAoYqaHR0cDovL2NydC5yMm0wMS5hbWF6
+b250cnVzdC5jb20vcjJtMDEuY2VyMAwGA1UdEwEB/wQCMAAwggF9BgorBgEEAdZ5
+AgQCBIIBbQSCAWkBZwB1AO7N0GTV2xrOxVy3nbTNE6Iyh0Z8vOzew1FIWUZxH7Wb
+AAABhuJmI6IAAAQDAEYwRAIgB1ZyxZzLbWvrKpPGjYggZ7h9jrZ07/n/x4nnCMCA
+/ZgCIH9hEucw+NVaFVz0zkfRKzT6tt3Ily6JdWjqQiowbNANAHYAc9meiRtMlnig
+IH1HneayxhzQUV5xGSqMa4AQesF3crUAAAGG4mYkAgAABAMARzBFAiEA1V/s0CgJ
+musEsZLCedRjANLi4vEH7tTYqjX+zMvvRPICIE8YJN6Z6IbIroaNHWwULh/YV62K
+DGvx7REtkJCOlBsjAHYASLDja9qmRzQP5WoC+p0w6xxSActW3SyB2bu/qznYhHMA
+AAGG4mYjzQAABAMARzBFAiEAoR9C8UAMYiOdKMV7skfimnpxDdjeRSP5ICh/ZiZu
+1FsCID1NTmEdgENhh9gG6iwsrVO2WpsAnDPc7mca/LHSvKjrMA0GCSqGSIb3DQEB
+CwUAA4IBAQAUyNlpQG2GdmWd3vaAf3E9vDbvzJAuW8ojqgGuXNDPsFAXMcTPp2Ws
+IPKSv5fncup9SRgcVl+2kzSW4GX53RA5A813G907lX+6pk9HqsiMlabHlslpQpci
+nfMl0GUqUWLQGbFsWk9X6neHM/4k9pPIbBDcXQhuN/UNkNG8V4kvoH6IzWJML0Mo
+ipugOsPq7BPdX84xjCujeooBVqtmApbWr8l+OnjO1rFxymozfhSFPqgBom7ill+L
+0scqh+TSSKDv6GmUQ/WOdnRQQfO10DDYbtprv6qv1NEd5iUQwRJdg3BjH1+EUe3m
+1iF3fNy1UtnYEGpNU32YYT8NWMsjRYiN
+-----END CERTIFICATE-----
+subject=CN = email-smtp.eu-west-1.amazonaws.com
+
+issuer=C = US, O = Amazon, CN = Amazon RSA 2048 M01
+
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: RSA-PSS
+Server Temp Key: ECDH, P-256, 256 bits
+---
+SSL handshake has read 5761 bytes and written 495 bytes
+Verification: OK
+---
+New, TLSv1.2, Cipher is ECDHE-RSA-AES256-GCM-SHA384
+Server public key is 2048 bit
+Secure Renegotiation IS supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+SSL-Session:
+    Protocol  : TLSv1.2
+    Cipher    : ECDHE-RSA-AES256-GCM-SHA384
+    Session-ID: 8F60085A7B9D21187E3EE2C5CCCD86F46516A6753097B5BFB53A002D43127911
+    Session-ID-ctx: 
+    Master-Key: 55D0BD6916FC68CFF5D1C6A97A1A23BA4B4142A6CC20160BF58A3A8A54965B12287D56EC916A4D3C4920985109CD8FEE
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    Start Time: 1689337891
+    Timeout   : 7200 (sec)
+    Verify return code: 0 (ok)
+    Extended master secret: yes
+---
+250-email-smtp.amazonaws.com
+250-8BITMIME
+250-STARTTLS
+250-AUTH PLAIN LOGIN
+250 Ok
+221 Bye
+closed
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:CN = smtp.gmail.com
+   i:C = US, O = Google Trust Services LLC, CN = GTS CA 1C3
+ 1 s:C = US, O = Google Trust Services LLC, CN = GTS CA 1C3
+   i:C = US, O = Google Trust Services LLC, CN = GTS Root R1
+ 2 s:C = US, O = Google Trust Services LLC, CN = GTS Root R1
+   i:C = BE, O = GlobalSign nv-sa, OU = Root CA, CN = GlobalSign Root CA
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIEhjCCA26gAwIBAgIQGpg14/yC+QkSeUGoITtsEjANBgkqhkiG9w0BAQsFADBG
+MQswCQYDVQQGEwJVUzEiMCAGA1UEChMZR29vZ2xlIFRydXN0IFNlcnZpY2VzIExM
+QzETMBEGA1UEAxMKR1RTIENBIDFDMzAeFw0yMzA2MTkwODIwNDZaFw0yMzA5MTEw
+ODIwNDVaMBkxFzAVBgNVBAMTDnNtdHAuZ21haWwuY29tMFkwEwYHKoZIzj0CAQYI
+KoZIzj0DAQcDQgAEwwLGpgznhMIR68k4qp8Qbc3+brfEAci2Vs+yUPz6PPkJUXyd
+SZOsRKMwMpcRrw9/SePaiVfJ8EXyZPCC828Gy6OCAmYwggJiMA4GA1UdDwEB/wQE
+AwIHgDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQW
+BBRCeghQmcxZJhUzW7Zg3BqHTDgQVTAfBgNVHSMEGDAWgBSKdH+vhc3ulc09nNDi
+RhTzcTUdJzBqBggrBgEFBQcBAQReMFwwJwYIKwYBBQUHMAGGG2h0dHA6Ly9vY3Nw
+LnBraS5nb29nL2d0czFjMzAxBggrBgEFBQcwAoYlaHR0cDovL3BraS5nb29nL3Jl
+cG8vY2VydHMvZ3RzMWMzLmRlcjAZBgNVHREEEjAQgg5zbXRwLmdtYWlsLmNvbTAh
+BgNVHSAEGjAYMAgGBmeBDAECATAMBgorBgEEAdZ5AgUDMDwGA1UdHwQ1MDMwMaAv
+oC2GK2h0dHA6Ly9jcmxzLnBraS5nb29nL2d0czFjMy9RT3ZKME4xc1QyQS5jcmww
+ggEDBgorBgEEAdZ5AgQCBIH0BIHxAO8AdQB6MoxU2LcttiDqOOBSHumEFnAyE4VN
+O9IrwTpXo1LrUgAAAYjS9PJgAAAEAwBGMEQCIGYTyBfcQJB1YftSGMYm0JS4q/Rg
+AbmRT+lCUlbrNQYGAiAuzuB0vOMcAOVG+wTTbuy0H6SnI8Fziyb8yeNufHB0SAB2
+AOg+0No+9QY1MudXKLyJa8kD08vREWvs62nhd31tBr1uAAABiNL08hgAAAQDAEcw
+RQIgRtLFPrEqbUyXKVysyVo5E2CKtl+YP2x/hgwaRsFhFT0CIQDRZY6t/ILTLlLR
+f7ajeqI6KlITaxGZZ6zjuUQBpc1RLzANBgkqhkiG9w0BAQsFAAOCAQEAFKPnGu+y
+949xaBA2XA6a9Lw49x58d8k+edkb9HHSG2OhBwM/QCGKYYVg2JO7DNA658XYdtml
+NAhqwYXks+BQt/nfVTuljRKtZG0WvtxVdF1YUqshBIeiBTLxOQaMwOvyXXBkxV92
+98Caewi/Ra72HBN63nXGblcLqYQYRu9CXJ2bBf+qxxsoUe/gqd/F52x/q4EtUW3X
+2YF3CsUmXMUqmVw5+GnIx9veSPXTMyrEi4//DHKsQZ99o1hL7DSF9hwMX0vRUMaY
+zrB1N+lxzdf/WdgV1Sl1XOjMYsWYYjgJRjYXleCtUlSBvyU5SR/svev+RKheAOyn
+SLct8QvloYXRiQ==
+-----END CERTIFICATE-----
+subject=CN = smtp.gmail.com
+
+issuer=C = US, O = Google Trust Services LLC, CN = GTS CA 1C3
+
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: ECDSA
+Server Temp Key: X25519, 253 bits
+---
+SSL handshake has read 4294 bytes and written 396 bytes
+Verification: OK
+---
+New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384
+Server public key is 256 bit
+Secure Renegotiation IS NOT supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 0 (ok)
+---
+220 smtp.gmail.com ESMTP t4-20020a5d4604000000b00313e59cb371sm10722839wrq.12 - gsmtp
+250-smtp.gmail.com at your service, [40.120.55.203]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+221 2.0.0 closing connection t4-20020a5d4604000000b00313e59cb371sm10722839wrq.12 - gsmtp
+---
+Post-Handshake New Session Ticket arrived:
+SSL-Session:
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_256_GCM_SHA384
+    Session-ID: 9397D835C8E8BED09EB88C6552D8BD569C736A39E2D2732940835D316BEEB783
+    Session-ID-ctx: 
+    Resumption PSK: 04ECCFEF2B76E840D77DD37A91C8D9671AD5D51DC344BCB5B9893D5F321551502A09A6173E2968C34BE67C588A50F096
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 172800 (seconds)
+    TLS session ticket:
+    0000 - 02 3f cb b1 b3 74 96 65-f0 5c 1b be 53 d9 b1 67   .?...t.e.\..S..g
+    0010 - eb 46 83 1b 54 33 32 91-e6 f3 50 36 c2 de 3b fe   .F..T32...P6..;.
+    0020 - 03 06 4f a1 64 4f 37 0a-f4 9e 14 a1 8d b6 7b 62   ..O.dO7.......{b
+    0030 - 8f 35 46 1e 09 0f 1b 7b-df 7f aa 93 75 8b 9c 9e   .5F....{....u...
+    0040 - af 3d 20 91 b9 f3 dd b8-4d c1 20 80 43 2b 6f 6b   .= .....M. .C+ok
+    0050 - a5 47 b7 9f 59 6a 78 6a-b3 a0 6d 51 fb 10 02 b2   .G..Yjxj..mQ....
+    0060 - 4e 8d 7f 3f fb 2d a3 f8-11 b4 83 6c 60 d5 e9 67   N..?.-.....l`..g
+    0070 - 84 4e df 5d 65 0d 44 f3-d8 c5 0a 2a b4 9e 89 b1   .N.]e.D....*....
+    0080 - c3 13 ae 0d af ea 10 92-ab 2a 82 19 73 84 f9 18   .........*..s...
+    0090 - 2f 0a d7 80 c4 60 ea 2c-85 1e 67 81 b9 dc ee a0   /....`.,..g.....
+    00a0 - 9d ab 8b 88 61 dc bd da-43 94 9b fe ee be 3e 15   ....a...C.....>.
+    00b0 - 06 2b f9 dc a0 d6 93 9e-b1 f6 34 74 e6 90 b8 72   .+........4t...r
+    00c0 - 8b 10 1c 6c 1c 5c 02 73-52 a5 98 07 4c 6b 8e dc   ...l.\.sR...Lk..
+    00d0 - c9 4a cc 7b fe fb d4 d9-f5 83 28 d9 cf 68 75 5f   .J.{......(..hu_
+    00e0 - a1 82 97 e4 42 52 55 1b-65 af b4 3a 7d 7d a5      ....BRU.e..:}}.
+
+    Start Time: 1689337891
+    Timeout   : 7200 (sec)
+    Verify return code: 0 (ok)
+    Extended master secret: no
+    Max Early Data: 0
+---
+read R BLOCK
+---
+Post-Handshake New Session Ticket arrived:
+SSL-Session:
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_256_GCM_SHA384
+    Session-ID: 943B42D6FC6F10F4A8C88A240E0F9FA6B428C7D353209C1A2E55AAB831A4DFAC
+    Session-ID-ctx: 
+    Resumption PSK: C853D456527DA07084FC60F1D2C930B50B2A840DBD8348F8C3A7F74B4D8F5F33EF6F63B3B361D3B3ACA861AB5A3B4294
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 172800 (seconds)
+    TLS session ticket:
+    0000 - 02 3f cb b1 b3 74 96 65-f0 5c 1b be 53 d9 b1 67   .?...t.e.\..S..g
+    0010 - 19 68 c5 6b ea f9 97 8a-c9 d1 00 60 5f 43 20 8d   .h.k.......`_C .
+    0020 - 50 59 48 0c a9 1c d9 65-88 f5 c5 88 9c d3 97 00   PYH....e........
+    0030 - 06 23 38 cf e3 ee c5 08-96 23 bf e6 46 c1 d7 d9   .#8......#..F...
+    0040 - 51 22 82 b3 32 c6 33 73-ce 33 b5 ff 02 2f 69 89   Q"..2.3s.3.../i.
+    0050 - 1f 0d 50 fc f6 e1 9c 99-f9 1e 04 b7 7e 57 bd b2   ..P.........~W..
+    0060 - 5d d3 70 c0 e1 bf c1 73-f6 78 e0 c5 30 d3 7e 94   ].p....s.x..0.~.
+    0070 - a8 ef 84 78 fd dc 54 fd-95 e1 f8 d8 74 63 2e 4c   ...x..T.....tc.L
+    0080 - 1b b9 55 52 d6 0f 19 88-a2 ad 50 0a a0 cc 0c bc   ..UR......P.....
+    0090 - dc 02 ab 42 65 98 bf ed-ea b0 6f e7 0f 67 41 e2   ...Be.....o..gA.
+    00a0 - e9 f9 c4 f9 9a b7 2c db-e1 b7 87 cc ad 99 88 82   ......,.........
+    00b0 - 92 62 e4 16 43 a1 80 53-71 a4 b2 7a ef f1 57 78   .b..C..Sq..z..Wx
+    00c0 - c5 d3 22 c3 86 8e 25 ee-f6 be 96 b4 48 86 bf f0   .."...%.....H...
+    00d0 - bd 02 eb 0a 00 73 58 71-e2 0d 5b c4 ce 0e 09 e5   .....sXq..[.....
+    00e0 - 77 52 eb be 42 52 55 df-9f b0 77 a0 bf ca d5      wR..BRU...w....
+
+    Start Time: 1689337891
+    Timeout   : 7200 (sec)
+    Verify return code: 0 (ok)
+    Extended master secret: no
+    Max Early Data: 0
+---
+read R BLOCK
+CONNECTED(00000003)
+---
+Certificate chain
+ 0 s:CN = smtp.gmail.com
+   i:C = US, O = Google Trust Services LLC, CN = GTS CA 1C3
+ 1 s:C = US, O = Google Trust Services LLC, CN = GTS CA 1C3
+   i:C = US, O = Google Trust Services LLC, CN = GTS Root R1
+ 2 s:C = US, O = Google Trust Services LLC, CN = GTS Root R1
+   i:C = BE, O = GlobalSign nv-sa, OU = Root CA, CN = GlobalSign Root CA
+---
+Server certificate
+-----BEGIN CERTIFICATE-----
+MIIEhjCCA26gAwIBAgIQGpg14/yC+QkSeUGoITtsEjANBgkqhkiG9w0BAQsFADBG
+MQswCQYDVQQGEwJVUzEiMCAGA1UEChMZR29vZ2xlIFRydXN0IFNlcnZpY2VzIExM
+QzETMBEGA1UEAxMKR1RTIENBIDFDMzAeFw0yMzA2MTkwODIwNDZaFw0yMzA5MTEw
+ODIwNDVaMBkxFzAVBgNVBAMTDnNtdHAuZ21haWwuY29tMFkwEwYHKoZIzj0CAQYI
+KoZIzj0DAQcDQgAEwwLGpgznhMIR68k4qp8Qbc3+brfEAci2Vs+yUPz6PPkJUXyd
+SZOsRKMwMpcRrw9/SePaiVfJ8EXyZPCC828Gy6OCAmYwggJiMA4GA1UdDwEB/wQE
+AwIHgDATBgNVHSUEDDAKBggrBgEFBQcDATAMBgNVHRMBAf8EAjAAMB0GA1UdDgQW
+BBRCeghQmcxZJhUzW7Zg3BqHTDgQVTAfBgNVHSMEGDAWgBSKdH+vhc3ulc09nNDi
+RhTzcTUdJzBqBggrBgEFBQcBAQReMFwwJwYIKwYBBQUHMAGGG2h0dHA6Ly9vY3Nw
+LnBraS5nb29nL2d0czFjMzAxBggrBgEFBQcwAoYlaHR0cDovL3BraS5nb29nL3Jl
+cG8vY2VydHMvZ3RzMWMzLmRlcjAZBgNVHREEEjAQgg5zbXRwLmdtYWlsLmNvbTAh
+BgNVHSAEGjAYMAgGBmeBDAECATAMBgorBgEEAdZ5AgUDMDwGA1UdHwQ1MDMwMaAv
+oC2GK2h0dHA6Ly9jcmxzLnBraS5nb29nL2d0czFjMy9RT3ZKME4xc1QyQS5jcmww
+ggEDBgorBgEEAdZ5AgQCBIH0BIHxAO8AdQB6MoxU2LcttiDqOOBSHumEFnAyE4VN
+O9IrwTpXo1LrUgAAAYjS9PJgAAAEAwBGMEQCIGYTyBfcQJB1YftSGMYm0JS4q/Rg
+AbmRT+lCUlbrNQYGAiAuzuB0vOMcAOVG+wTTbuy0H6SnI8Fziyb8yeNufHB0SAB2
+AOg+0No+9QY1MudXKLyJa8kD08vREWvs62nhd31tBr1uAAABiNL08hgAAAQDAEcw
+RQIgRtLFPrEqbUyXKVysyVo5E2CKtl+YP2x/hgwaRsFhFT0CIQDRZY6t/ILTLlLR
+f7ajeqI6KlITaxGZZ6zjuUQBpc1RLzANBgkqhkiG9w0BAQsFAAOCAQEAFKPnGu+y
+949xaBA2XA6a9Lw49x58d8k+edkb9HHSG2OhBwM/QCGKYYVg2JO7DNA658XYdtml
+NAhqwYXks+BQt/nfVTuljRKtZG0WvtxVdF1YUqshBIeiBTLxOQaMwOvyXXBkxV92
+98Caewi/Ra72HBN63nXGblcLqYQYRu9CXJ2bBf+qxxsoUe/gqd/F52x/q4EtUW3X
+2YF3CsUmXMUqmVw5+GnIx9veSPXTMyrEi4//DHKsQZ99o1hL7DSF9hwMX0vRUMaY
+zrB1N+lxzdf/WdgV1Sl1XOjMYsWYYjgJRjYXleCtUlSBvyU5SR/svev+RKheAOyn
+SLct8QvloYXRiQ==
+-----END CERTIFICATE-----
+subject=CN = smtp.gmail.com
+
+issuer=C = US, O = Google Trust Services LLC, CN = GTS CA 1C3
+
+---
+No client certificate CA names sent
+Peer signing digest: SHA256
+Peer signature type: ECDSA
+Server Temp Key: X25519, 253 bits
+---
+SSL handshake has read 4580 bytes and written 429 bytes
+Verification: OK
+---
+New, TLSv1.3, Cipher is TLS_AES_256_GCM_SHA384
+Server public key is 256 bit
+Secure Renegotiation IS NOT supported
+Compression: NONE
+Expansion: NONE
+No ALPN negotiated
+Early data was not sent
+Verify return code: 0 (ok)
+---
+250-smtp.gmail.com at your service, [40.120.55.203]
+250-SIZE 35882577
+250-8BITMIME
+250-AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH
+250-ENHANCEDSTATUSCODES
+250-PIPELINING
+250-CHUNKING
+250 SMTPUTF8
+221 2.0.0 closing connection i10-20020a5d438a000000b00313f61889ecsm10680354wrq.66 - gsmtp
+---
+Post-Handshake New Session Ticket arrived:
+SSL-Session:
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_256_GCM_SHA384
+    Session-ID: C031938DE432D74DDF55EB04773D10BE3F17ED2BD03963DC227C8C2F68C9BF06
+    Session-ID-ctx: 
+    Resumption PSK: F44CACE7FEA0D107F4806EF8CAA1EAD8E4403BBA1100521CD9F8B3386FED8064438A4D3EE26360E70EF8D2AF29590EE1
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 172800 (seconds)
+    TLS session ticket:
+    0000 - 02 3f cb b1 b3 74 96 65-f0 5c 1b be 53 d9 b1 67   .?...t.e.\..S..g
+    0010 - 6a d3 09 94 fc 56 b8 f4-87 5b 68 47 2e 79 e1 c0   j....V...[hG.y..
+    0020 - 3d e8 a6 ea 42 db 57 45-de f3 56 17 5e bb 00 44   =...B.WE..V.^..D
+    0030 - 44 e1 19 e6 eb 2c 5d 00-46 9b 7b fe 00 ea 8c 6a   D....,].F.{....j
+    0040 - d4 87 72 dd f5 86 e9 39-ed fe 3b 86 17 eb 71 f1   ..r....9..;...q.
+    0050 - a9 a9 af 7c 23 3c 90 2a-2f e2 a2 10 c0 91 61 7c   ...|#<.*/.....a|
+    0060 - 2f ac 99 3e eb e0 8c da-c7 f9 1e 4a 56 41 c5 7a   /..>.......JVA.z
+    0070 - cc e7 7b ce ec 92 8e 88-5f b5 f7 0b b1 4a ad 62   ..{....._....J.b
+    0080 - 8a f1 79 60 f9 a5 50 ea-cb 76 18 59 67 6a d9 0a   ..y`..P..v.Ygj..
+    0090 - 7a 4f 86 c0 5e fd 29 7e-df 35 82 f7 58 c7 7b 2b   zO..^.)~.5..X.{+
+    00a0 - c3 93 5b 6d 5b f5 91 c9-82 93 bf dc b9 33 1c 38   ..[m[........3.8
+    00b0 - 17 9f b6 e3 e3 50 01 e9-a3 2f 35 c4 f9 72 76 16   .....P.../5..rv.
+    00c0 - 1e b3 10 38 0d 9e 2b e5-5d ff a3 b5 0e 0f b9 43   ...8..+.]......C
+    00d0 - be 05 89 6b 52 2d 26 59-8c 2d 32 d0 d5 cf e7 fb   ...kR-&Y.-2.....
+    00e0 - d8 d5 1b 5b 42 52 55 d4-90 fb c8 46 ad 8d 31      ...[BRU....F..1
+
+    Start Time: 1689337891
+    Timeout   : 7200 (sec)
+    Verify return code: 0 (ok)
+    Extended master secret: no
+    Max Early Data: 0
+---
+read R BLOCK
+---
+Post-Handshake New Session Ticket arrived:
+SSL-Session:
+    Protocol  : TLSv1.3
+    Cipher    : TLS_AES_256_GCM_SHA384
+    Session-ID: FE3020B3D9B3020E047FB76DBD29659EBBB97A7FC9B334CCA6DDD336A53E18DC
+    Session-ID-ctx: 
+    Resumption PSK: 75C8C93F437B30DCB57559DFA0C63AE72CED39CC30AA4FE810EC328822A9FCD47BFF3995E94680F3E49D2093CB6F2E32
+    PSK identity: None
+    PSK identity hint: None
+    SRP username: None
+    TLS session ticket lifetime hint: 172800 (seconds)
+    TLS session ticket:
+    0000 - 02 3f cb b1 b3 74 96 65-f0 5c 1b be 53 d9 b1 67   .?...t.e.\..S..g
+    0010 - f4 eb 03 c5 63 89 60 1a-df d9 c0 4d 01 db be e7   ....c.`....M....
+    0020 - b4 68 7b f0 51 eb 9c b4-30 c3 34 25 06 8b 1f 1b   .h{.Q...0.4%....
+    0030 - 13 e6 a2 0f 48 e5 10 17-3a 6b 45 50 08 32 06 d5   ....H...:kEP.2..
+    0040 - a9 61 c9 fc ab e5 a9 8e-74 61 a3 0b 08 4a bb 7e   .a......ta...J.~
+    0050 - c1 d2 a5 21 64 f8 7a 68-b5 4a 7d 19 d9 06 3d a1   ...!d.zh.J}...=.
+    0060 - b2 4f 4e 44 b1 3d 0a 03-c5 b5 88 b3 56 df 56 e1   .OND.=......V.V.
+    0070 - 1e b0 23 60 f3 cd a2 f8-ef 28 71 60 a0 69 2f c2   ..#`.....(q`.i/.
+    0080 - 47 b5 90 2b eb 14 79 7f-b7 7d 2e a0 b7 1c 81 ec   G..+..y..}......
+    0090 - 81 ad 5a e9 4a 1c 81 6c-e0 2b a1 2f 64 3e ce 46   ..Z.J..l.+./d>.F
+    00a0 - fd 64 6a 04 b5 27 f9 8f-6e 75 8f 78 35 31 89 47   .dj..'..nu.x51.G
+    00b0 - 4f ca f9 a9 b2 c8 8f 70-3a a8 47 9b d7 05 cb db   O......p:.G.....
+    00c0 - 4f d6 df 6e dc 51 4b ce-29 e8 78 37 32 0b f4 d7   O..n.QK.).x72...
+    00d0 - 74 5b 49 b9 0f f6 41 fb-05 b7 c0 a8 c5 c0 8e 09   t[I...A.........
+    00e0 - 5b 56 26 79 42 52 55 a6-44 4a e7 d9 03 8f e4      [V&yBRU.DJ.....
+
+    Start Time: 1689337891
+    Timeout   : 7200 (sec)
+    Verify return code: 0 (ok)
+    Extended master secret: no
+    Max Early Data: 0
+---
+read R BLOCK

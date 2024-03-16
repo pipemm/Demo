@@ -31,7 +31,7 @@ jobs:
         run: |
           ##$DebugPreference = 'Continue';
             ## https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_preference_variables#debugpreference
-          Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force;
+          Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -AllowClobber -Force;
           Get-InstalledModule -Name Az;
 
       - name: Connect

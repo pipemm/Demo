@@ -72,15 +72,15 @@ jobs:
 
           [Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceGroup[]]$ResourceGroups = (Get-AzResourceGroup);
           ${ResourceGroups}
-          "GROUP_NAME=${ResourceGroups}.ResourceGroupName" >> "${GITHUB_ENV}"
-          Get-Content -LiteralPath "${GITHUB_ENV}"
+          "GROUP_NAME=${ResourceGroups}.ResourceGroupName" >> "${Env:GITHUB_ENV}"
+          Get-Content -LiteralPath "${Env:GITHUB_ENV}"
       
       - name: Test
         working-directory: ./Azure/Lab/
         run: |
-          $username = 'Username';
-          $password = 'Password' | ConvertTo-SecureString -AsPlainText -Force;
-          $credential = [PSCredential]::New($username,$password);
+          [System.String]                             $username   = 'Username';
+          [System.Security.SecureString]              $password   = ('Password' | ConvertTo-SecureString -AsPlainText -Force);
+          [System.Management.Automation.PSCredential] $credential = [System.Management.Automation.PSCredential]::New($username,$password);
           ${credential}.GetType().FullName;
           ${password}.GetType().FullName;
 

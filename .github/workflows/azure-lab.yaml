@@ -55,7 +55,6 @@ jobs:
           
 
       - name: Connect
-        working-directory: ./Azure/Lab/
         env:
           TOKEN : "${{ github.event.inputs.token }}"
           ID    : "${{ github.event.inputs.account_id }}"
@@ -71,5 +70,13 @@ jobs:
           ${ResourceGroups}
           "GROUP_NAME=${ResourceGroups}.ResourceGroupName" >> "${GITHUB_ENV}"
           Get-Content -LiteralPath "${GITHUB_ENV}"
-
+      
+      - name: Test
+        working-directory: ./Azure/Lab/
+        run: |
+          $username = 'Username';
+          $password = 'Password' | ConvertTo-SecureString -AsPlainText -Force;
+          $credential = [PSCredential]::New($username,$password);
+          ${credential}.GetType().FullName;
+          ${password}.GetType().FullName;
 

@@ -67,6 +67,6 @@ jobs:
           [System.String]$Expire = (Get-AzAccessToken).ExpiresOn.ToString('u');
           "The session will expire at ${Expire}."
 
-          $ResourceGroups = (Get-AzResourceGroup);
+          [Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceGroup[]]$ResourceGroups = (Get-AzResourceGroup);
           $ResourceGroups.GetType().FullName;
 

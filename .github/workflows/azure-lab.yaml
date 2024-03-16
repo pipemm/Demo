@@ -31,8 +31,8 @@ jobs:
         run: |
           $DebugPreference = 'Continue';
             ## https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_preference_variables#debugpreference
-          Install-Module -Name Az -Scope CurrentUser -Repository PSGallery;
-          [System.Management.Automation.PSCustomObject]$Check = (Get-InstalledModule -Name Az);
+          Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force;
+          Get-InstalledModule -Name Az;
 
       - name: Connect
         working-directory: ./Azure/Lab/

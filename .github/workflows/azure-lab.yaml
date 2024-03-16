@@ -1,6 +1,6 @@
 
 name: Azure Lab
-run-name: ${{ github.actor }} is exploring Azure.
+run-name: Lab Practice
 
 on:
   workflow_dispatch:
@@ -25,6 +25,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         ## https://github.com/actions/checkout
+
+      - name: Prepare
+        shell: powershell
+        run: |
+          Install-Module -Name Az -Scope CurrentUser -Repository PSGallery
 
       - name: Connect
         working-directory: ./Azure/Lab/

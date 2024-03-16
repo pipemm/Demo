@@ -10,7 +10,7 @@ In the Azure Cloud Shell (PowerShell), obtain the Access Token and the Account I
 ## extra
 [System.String]$Expire = (Get-AzAccessToken).ExpiresOn.ToString('u');
 'You can connect to Azure by executing the following command:' 
-"Connect-AzAccount -AccessToken '${Token}' -AccountId '${Id}'"
+"Connect-AzAccount -AccessToken '${Token}' -AccountId '${Id}';"
 ''
 "Pay attention to the fact that the session will expire beyond ${Expire}."
 

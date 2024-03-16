@@ -62,7 +62,9 @@ jobs:
         run: |
           [System.String]$Token = "${Env:TOKEN}";
           [System.String]$Id    = "${Env:ID}";
-          Connect-AzAccount -AccessToken "${Token}" -AccountId "${Id}";
+          $Profile=(Connect-AzAccount -AccessToken "${Token}" -AccountId "${Id}");
+          ${Profile};
+          ${Profile} -eq $null;
           [System.String]$Expire = (Get-AzAccessToken).ExpiresOn.ToString('u');
           "The session will expire at ${Expire}."
 

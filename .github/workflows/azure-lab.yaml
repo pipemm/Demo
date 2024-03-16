@@ -69,5 +69,7 @@ jobs:
 
           [Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceGroup[]]$ResourceGroups = (Get-AzResourceGroup);
           ${ResourceGroups}
-          
+          "GROUP_NAME=${ResourceGroups}.ResourceGroupName" >> "${GITHUB_ENV}"
+          Get-Content -LiteralPath "${GITHUB_ENV}"
+
 

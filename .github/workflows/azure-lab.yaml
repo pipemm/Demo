@@ -68,5 +68,6 @@ jobs:
           "The session will expire at ${Expire}."
 
           [Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceGroup[]]$ResourceGroups = (Get-AzResourceGroup);
-          $ResourceGroups.GetType().FullName;
+          ${ResourceGroups}
+          
 

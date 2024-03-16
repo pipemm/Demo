@@ -4,13 +4,14 @@ When you're working with a local install of Azure PowerShell, you need to authen
 In the Azure Cloud Shell (PowerShell), obtain the Access Token and the Account ID using below script.
 
 ```powershell
-$Token=(Get-AzAccessToken).Token;
-$Id=(Get-AzContext).Account;
+[System.String]$Token = (Get-AzAccessToken).Token;
+[System.String]$Id    = (Get-AzAccessToken).UserId;
 
 ## extra
-
-'You can connect to Azure by executing following command.' 
-''
+[System.String]$Expire = (Get-AzAccessToken).ExpiresOn.ToString('u');
+'You can connect to Azure by executing the following command:' 
 "Connect-AzAccount -AccessToken '${Token}' -AccountId '${Id}'"
+''
+"Pay attention to the fact that the session will expire beyond Get${Expire}."
 
 ```

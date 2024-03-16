@@ -1,0 +1,39 @@
+
+name: Azure Lab
+run-name: ${{ github.actor }} is exploring Azure.
+
+on:
+  workflow_dispatch:
+    inputs:
+      token:
+        type: string
+        description: Access Token
+        required: true
+      account_id:
+        type: string
+        description: Account ID
+        required: true
+
+jobs:
+
+  Create-an-Azure-Resource-using-scripts:
+    runs-on: windows-2022
+    ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        ## https://github.com/actions/checkout
+
+      - name: Connect
+        working-directory: ./Azure/Lab/
+        env:
+          TOKEN : "${{ github.event.inputs.taken}}"
+          ID    : "${{ github.event.inputs.account_id}}"
+        shell: powershell
+        run: |
+          [System.String]$Token = ${Env:TOKEN};
+          [System.String]$Id    = ${Env:ID};
+          Connect-AzAccount -AccessToken "${Token}"" -AccountId "${Id}"
+          

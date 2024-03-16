@@ -33,7 +33,8 @@ jobs:
 
   Create-an-Azure-Resource-using-scripts:
     runs-on: windows-2022
-    ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+      ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+    environment: AzureLab
 
     steps:
 
@@ -96,6 +97,7 @@ jobs:
       - name: Test
         working-directory: ./Azure/Lab/
         run: |
+          ${Env:PASSWORD_DEFAULT}
           [System.String]                             $username   = 'Username';
           [System.Security.SecureString]              $password   = ('Password' | ConvertTo-SecureString -AsPlainText -Force);
           [System.Management.Automation.PSCredential] $credential = [System.Management.Automation.PSCredential]::New($username,$password);

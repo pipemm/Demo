@@ -29,7 +29,7 @@ jobs:
       - name: Prepare
         shell: powershell
         run: |
-          $DebugPreference = 'Continue';
+          ##$DebugPreference = 'Continue';
             ## https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_preference_variables#debugpreference
           Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force;
           Get-InstalledModule -Name Az;

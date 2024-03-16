@@ -18,6 +18,7 @@ on:
         description: 'Location'
         required: false
         options:
+          - 'default'
           - 'westus2'
           - 'southcentralus'
           - 'centralus'
@@ -84,7 +85,9 @@ jobs:
           "The session will expire at ${Expire}."
           [Microsoft.Azure.Commands.Profile.Models.PSAzureSubscription[]]$Subscriptions = (Get-AzSubscription);
           ${Subscriptions};
-          ${Subscriptions}.Count;
+          if ( ${Subscriptions}.Count -eq 0 ) {
+            exit 1;
+          }
 
           [Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceGroup[]]$ResourceGroups = (Get-AzResourceGroup);
           ${ResourceGroups}
@@ -96,6 +99,8 @@ jobs:
       
       - name: Test
         working-directory: ./Azure/Lab/
+        env:
+          LOCATION: "${{ github.event.inputs.location }}"
         run: |
           ${Env:PASSWORD_DEFAULT}
           [System.String]                             $username   = 'Username';

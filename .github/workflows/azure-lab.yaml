@@ -86,6 +86,7 @@ jobs:
           [Microsoft.Azure.Commands.Profile.Models.PSAzureSubscription[]]$Subscriptions = (Get-AzSubscription);
           ${Subscriptions};
           if ( ${Subscriptions}.Count -eq 0 ) {
+            Write-Error -Message 'There is no subscription. '
             exit 1;
           }
 

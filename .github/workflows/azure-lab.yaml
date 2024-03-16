@@ -35,5 +35,4 @@ jobs:
         run: |
           [System.String]$Token = ${Env:TOKEN};
           [System.String]$Id    = ${Env:ID};
-          Connect-AzAccount -AccessToken "${Token}"" -AccountId "${Id}"
-          
+          Connect-AzAccount -AccessToken "${Token}" -AccountId "${Id}"

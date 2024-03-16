@@ -29,18 +29,22 @@ jobs:
       - name: Prepare
         shell: powershell
         run: |
+          [System.String[]]$packages = @(
+            'Az.Accounts',
+            'Az.Resources',
+          );
+          ## https://www.powershellgallery.com/packages/Az/
           Install-Module -Name 'Az.Accounts' -Scope CurrentUser -Repository PSGallery -AllowClobber -Force;
           Get-InstalledModule -Name 'Az.Accounts';
 
       - name: Connect
         working-directory: ./Azure/Lab/
         env:
-          TOKEN : "${{ github.event.inputs.taken }}"
+          TOKEN : "${{ github.event.inputs.token }}"
           ID    : "${{ github.event.inputs.account_id }}"
         shell: powershell
         run: |
           [System.String]$Token = "${Env:TOKEN}";
           [System.String]$Id    = "${Env:ID}";
-          "ID : ${Env:ID}";
           Connect-AzAccount -AccessToken "${Token}" -AccountId "${Id}";
           Get-AzResourceGroup;

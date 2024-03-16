@@ -13,6 +13,21 @@ on:
         type: string
         description: Account ID
         required: true
+      location:
+        type: choice
+        description: 'Location'
+        required: false
+        options:
+          - 'westus2'
+          - 'southcentralus'
+          - 'centralus'
+          - 'eastus'
+          - 'westeurope'
+          - 'southeastasia'
+          - 'japaneast'
+          - 'brazilsouth'
+          - 'australiasoutheast'
+          - 'centralindia'
 
 jobs:
 
@@ -72,8 +87,11 @@ jobs:
 
           [Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceGroup[]]$ResourceGroups = (Get-AzResourceGroup);
           ${ResourceGroups}
-          "GROUP_NAME=${ResourceGroups}.ResourceGroupName" >> "${Env:GITHUB_ENV}"
+          [System.String]$group = ${ResourceGroups}.ResourceGroupName;
+          "GROUP_NAME=${group}" >> "${Env:GITHUB_ENV}"
           Get-Content -LiteralPath "${Env:GITHUB_ENV}"
+
+          (Get-AzLocation);
       
       - name: Test
         working-directory: ./Azure/Lab/

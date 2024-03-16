@@ -62,11 +62,11 @@ jobs:
         run: |
           [System.String]$Token = "${Env:TOKEN}";
           [System.String]$Id    = "${Env:ID}";
-          $Profile=(Connect-AzAccount -AccessToken "${Token}" -AccountId "${Id}");
+          [Microsoft.Azure.Commands.Profile.Models.Core.PSAzureProfile]$Profile=(Connect-AzAccount -AccessToken "${Token}" -AccountId "${Id}");
           ${Profile};
-          ${Profile} -eq $null;
           [System.String]$Expire = (Get-AzAccessToken).ExpiresOn.ToString('u');
           "The session will expire at ${Expire}."
+          Get-AzSubscription;
 
           [Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceGroup[]]$ResourceGroups = (Get-AzResourceGroup);
           ${ResourceGroups}

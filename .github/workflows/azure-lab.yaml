@@ -52,7 +52,7 @@ jobs:
             }
             Get-InstalledModule -Name "${azp}";
           }
-          Uninstall-AzureRm;
+          
 
       - name: Connect
         working-directory: ./Azure/Lab/
@@ -64,4 +64,9 @@ jobs:
           [System.String]$Token = "${Env:TOKEN}";
           [System.String]$Id    = "${Env:ID}";
           Connect-AzAccount -AccessToken "${Token}" -AccountId "${Id}";
-          Get-AzResourceGroup;
+          [System.String]$Expire = (Get-AzAccessToken).ExpiresOn.ToString('u');
+          "The session will expire at ${Expire}."
+
+          $ResourceGroups = (Get-AzResourceGroup);
+          $ResourceGroups.GetType().FullName;
+

@@ -52,7 +52,7 @@ jobs:
             }
             Get-InstalledModule -Name "${azp}";
           }
-          Get-InstalledModule
+          Uninstall-AzureRm;
 
       - name: Connect
         working-directory: ./Azure/Lab/

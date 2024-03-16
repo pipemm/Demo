@@ -30,7 +30,7 @@ jobs:
         shell: powershell
         run: |
           [System.String[]]$packages = @(
-            ##'Az.Accounts',
+            'Az.Accounts',
             'Az.Resources',
             'Az'
           );

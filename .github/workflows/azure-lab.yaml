@@ -29,19 +29,18 @@ jobs:
       - name: Prepare
         shell: powershell
         run: |
-          ##$DebugPreference = 'Continue';
-            ## https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_preference_variables#debugpreference
-          Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -AllowClobber -Force;
-          Get-InstalledModule -Name Az;
+          Install-Module -Name 'Az.Accounts' -Scope CurrentUser -Repository PSGallery -AllowClobber -Force;
+          Get-InstalledModule -Name 'Az.Accounts';
 
       - name: Connect
         working-directory: ./Azure/Lab/
         env:
-          TOKEN : "${{ github.event.inputs.taken}}"
-          ID    : "${{ github.event.inputs.account_id}}"
+          TOKEN : "${{ github.event.inputs.taken }}"
+          ID    : "${{ github.event.inputs.account_id }}"
         shell: powershell
         run: |
-          [System.String]$Token = ${Env:TOKEN};
-          [System.String]$Id    = ${Env:ID};
+          [System.String]$Token = "${Env:TOKEN}";
+          [System.String]$Id    = "${Env:ID}";
+          "ID : ${Env:ID}";
           Connect-AzAccount -AccessToken "${Token}" -AccountId "${Id}";
           Get-AzResourceGroup;

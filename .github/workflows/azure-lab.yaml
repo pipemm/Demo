@@ -30,27 +30,29 @@ jobs:
         shell: powershell
         run: |
           [System.String[]]$packages = @(
-            'Az.Accounts',
+            ##'Az.Accounts',
             'Az.Resources',
             'Az'
           );
+          [System.String[]]$skip = @(
+            'Az'
+          );
           ## https://www.powershellgallery.com/packages/Az/
-          [System.String]$skip = 'Az';
           foreach ($azp in $packages)
           {
-            if ( "${azp}" -eq "${skip}" ) {
+            if ( ${skip}.Contains("${azp}") ) {
               continue;
             }
             Install-Module -Name "${azp}" -Scope CurrentUser -Repository PSGallery -AllowClobber -Force;
           }
           foreach ($azp in $packages)
           {
-            if ("${azp}" -eq "${skip}") {
+            if ( ${skip}.Contains("${azp}") ) {
               continue;
             }
             Get-InstalledModule -Name "${azp}";
           }
-          
+          Get-InstalledModule
 
       - name: Connect
         working-directory: ./Azure/Lab/

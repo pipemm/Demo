@@ -1,7 +1,14 @@
 
 ## https://learn.microsoft.com/en-us/training/modules/automate-azure-tasks-with-powershell/6-exercise-create-resource-interactively
 
-[System.Int32] $number_vm      = 3;
+[System.Int32] $number_vm      = [System.Int32]${Env:NUM_VMS};
+if ( $(number_vm} -eq $null ) {
+    [System.Int32] $number_vm  = [System.Int32]1;
+} elseif ( $(number_vm} -lt 1) {
+    [System.Int32] $number_vm  = [System.Int32]1;
+} elseif ( $(number_vm} -gt 9) {
+    [System.Int32] $number_vm  = [System.Int32]9;
+}
 [System.Int32] $port_ssh_open  = 22;
 [System.String]$image_vm       = 'Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest';
 [System.String]$resource_group = "${Env:RESOURCEGROUPNAME}";

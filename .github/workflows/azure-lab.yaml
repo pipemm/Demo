@@ -90,26 +90,57 @@ jobs:
             exit 1;
           }
 
-      - name: Get Resource Group Information
+      - name: Get Resource Group Information and Determine Location
         env:
           LOCATION : "${{ github.event.inputs.location }}"
         shell: powershell
         run: |
+          [Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceProviderLocation[]] $Locations     = (Get-AzLocation);
+          [System.Collections.Specialized.OrderedDictionary]                                        $Location_Dict = [ordered]@{};
+          ${Locations} |
+            Where-Object -FilterScript { $_.RegionType -eq 'Physical' } |
+            ForEach-Object -Process {
+              [System.String]$Location         = $_.Location;
+              [System.String]$DisplayName      = $_.DisplayName;
+              [System.String]$PhysicalLocation = $_.PhysicalLocation;
+              [System.String]$GeographyGroup   = $_.GeographyGroup;
+              [System.String]$DisplayLocation  = "${PhysicalLocation}, ${GeographyGroup}";
+              if ( "${PhysicalLocation}" -eq '') {
+                [System.String]$DisplayLocation = "${GeographyGroup}";
+              }
+              $Location_Dict["${Location}"]    = "${DisplayName} (${Location}), ${DisplayLocation}";
+            }
+          
           [Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceGroup[]]$ResourceGroups = (Get-AzResourceGroup);
           Write-Output ${ResourceGroups}
           if ( ${ResourceGroups}.Count -gt 0 ) {
             [Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceGroup]$group = ${ResourceGroups}[0];
-            [System.String]$groupname = $group.ResourceGroupName;
-            [System.String]$location  = $group.Location;
-            Write-Output "The ${group} resource group will be used. Its location is ${location}."
+            [System.String]$groupname      = $group.ResourceGroupName;
+            [System.String]$glocation      = $group.Location;
+            [System.String]$location_disp  = "${glocation}";
+            if ( $Location_Dict.Contains("${glocation}") ) {
+              [System.String]$location_disp  = $Location_Dict["${glocation}"]
+            }
+            Write-Output "The ${groupname} resource group will be used. Its location is ${location_disp}."
             "${Env:GITHUB_ENV}" -eq $null;
             if ( "${Env:GITHUB_ENV}" -eq $null ) {
-              "GROUP_NAME=${group}" >> "${Env:GITHUB_ENV}"
+              "GROUP_NAME=${groupname}" >> "${Env:GITHUB_ENV}"
               Get-Content -LiteralPath "${Env:GITHUB_ENV}"
             }
+          } else {
+            Write-Error -Message 'There is no resource group found. '
+            exit 1;
           }
-
-          ##(Get-AzLocation);
+          
+          [System.String]$LocationUsed = "${Env:LOCATION}"
+          if ( "${LocationUsed}" -eq 'default' ) {
+            [System.String]$LocationUsed = "${glocation}"
+          }
+          [System.String]$LocationUsed_Disp  = "${LocationUsed}";
+          if ( $Location_Dict.Contains("${LocationUsed}") ) {
+            [System.String]$LocationUsed_Disp  = $Location_Dict["${LocationUsed}"]
+          }
+          Write-Output "The location ${LocationUsed} will be used."
       
       - name: Test
         working-directory: ./Azure/Lab/

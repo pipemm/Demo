@@ -15,3 +15,8 @@ In the Azure Cloud Shell (PowerShell), obtain the Access Token and the Account I
 "Pay attention to the fact that the session will expire beyond ${Expire}."
 
 ```
+
+
+```
+
+```

@@ -122,11 +122,6 @@ jobs:
               [System.String]$location_disp  = $Location_Dict["${glocation}"]
             }
             Write-Output "The ${groupname} resource group will be used. Its location is ${location_disp}."
-            "${Env:GITHUB_ENV}" -eq $null;
-            if ( "${Env:GITHUB_ENV}" -eq $null ) {
-              "GROUP_NAME=${groupname}" >> "${Env:GITHUB_ENV}"
-              Get-Content -LiteralPath "${Env:GITHUB_ENV}"
-            }
           } else {
             Write-Error -Message 'There is no resource group found. '
             exit 1;
@@ -141,17 +136,32 @@ jobs:
             [System.String]$LocationUsed_Disp  = $Location_Dict["${LocationUsed}"]
           }
           Write-Output "The location ${LocationUsed_Disp} will be used."
-      
+          
+          if ( "${Env:GITHUB_ENV}" -eq $null ) {
+            "GROUP_NAME=${groupname}"  >> "${Env:GITHUB_ENV}"
+            "LOCATION=${LocationUsed}" >> "${Env:GITHUB_ENV}"
+          }
+
       - name: Test
         working-directory: ./Azure/Lab/
         env:
-          LOCATION     : "${{ github.event.inputs.location }}"
           VM_USERNAME  : "${{ secrets.USERNAME_DEFAULT }}"
           VM_PASSWORD  : "${{ secrets.PASSWORD_DEFAULT }}"
         run: |
-          ${Env:PASSWORD_DEFAULT}
-          [System.String]                             $username   =  "${Env:VM_USERNAME}";
-          [System.Security.SecureString]              $password   = ("${Env:VM_PASSWORD}" | ConvertTo-SecureString -AsPlainText -Force);
+          [System.Int32] $number_vm      = 3;
+          [System.Int32] $port_ssh_open  = 22;
+          [System.String]$image_vm       = 'Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest';
+          [System.String]$resource_group = "${Env:GROUP_NAME}";
+          [System.String]$location_vm    = "${Env:LOCATION}";
+          [System.String]                $username    =  "${Env:VM_USERNAME}";
+          [System.Security.SecureString] $password    = ("${Env:VM_PASSWORD}" | ConvertTo-SecureString -AsPlainText -Force);
           [System.Management.Automation.PSCredential] $credential = [System.Management.Automation.PSCredential]::New(${username},${password});
-          ${credential}.Username
+          [System.String]                $username_vm =${credential}.Username;
+          Write-Output "Resource Group                     : ${resource_group}";
+          Write-Output "Virtual Machine Location           : ${location_vm}";
+          Write-Output "Virtual Machine Image              : ${image_vm}";
+          Write-Output "Port for Secure Shell (Open)       : ${port_ssh_open}";
+          Write-Output "Virtual Machine User Name          : ${username_vm}";
+          Write-Output "Number of Machines to be disployed : ${number_vm}";
+          
 

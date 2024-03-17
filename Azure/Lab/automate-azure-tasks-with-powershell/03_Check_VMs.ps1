@@ -22,6 +22,6 @@ ${VMs} |
         Write-Output ${vm}.StorageProfile;
         Write-Output "Information on the disks of the virtual machine ${vm_name} : ";
         Write-Output ${vm}.StorageProfile.OsDisk;
-        Write-Output "Available sizes for  the virtual machine ${vm_name} : ";
-        ${vm} | Get-AzVMSize | Format-Table;
+        Write-Output "Available sizes (first 5) for the virtual machine ${vm_name} : ";
+        ${vm} | Get-AzVMSize | Select-Object -First 5 | Format-Table;
     }

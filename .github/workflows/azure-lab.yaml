@@ -14,9 +14,10 @@ on:
         description: Account ID
         required: true
       location:
-        type: choice
         description: 'Location'
-        required: false
+        type: choice
+        required: ture
+        default: 'japaneast'
         options:
           - 'default'
           - 'westus2'
@@ -29,11 +30,23 @@ on:
           - 'brazilsouth'
           - 'australiasoutheast'
           - 'centralindia'
+      image:
+        description: 'Image'
+        type: choice
+        required: true
+        options:
+          - 'Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest'
+          - 'Canonical:0001-com-ubuntu-server-jammy:22_04-lts:latest'
       num_vms:
         description: 'Number of VMs'
         required: true
         default: 1
         type: number
+      cleanup:
+        description: 'Perform Clean-Up'
+        required: true
+        default: true
+        type: boolean
         
 
 jobs:

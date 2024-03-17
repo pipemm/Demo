@@ -147,7 +147,7 @@ jobs:
           VM_USERNAME  : "${{ secrets.USERNAME_DEFAULT }}"
           VM_PASSWORD  : "${{ secrets.PASSWORD_DEFAULT }}"
         run: |
-          .\03_Check_Linux_VMs.ps1
+          .\03_Check_VMs.ps1
       
       - name: Delete Virtual Machines
         if: ' ${{ always() && github.event.inputs.cleanup }} '

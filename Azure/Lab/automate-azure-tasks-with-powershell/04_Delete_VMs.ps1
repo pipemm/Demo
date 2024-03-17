@@ -18,9 +18,8 @@ if ( "${ResourceGroup}" -eq '' ) {
     exit 1;
 }
 
-[Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine[]]$vms = (
-    foreach( $n in 1..${NumberVM} ){
-        [System.String]$VirtualMachine = "${PrefixVM}-${LocationVM}-" + ${n}.ToString().PadLeft(3,'0')
+[Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine[]]$vms = ( foreach( $n in 1..${NumberVM} ) {
+        [System.String]$VirtualMachine = "${PrefixVM}-${LocationVM}-" + ${n}.ToString().PadLeft(3,'0');
         Get-AzVM -ResourceGroupName "${ResourceGroup}" -Name "${VirtualMachine}";
     }
 );

@@ -91,6 +91,7 @@ jobs:
           }
 
       - name: Get Resource Group Information and Determine Location
+        working-directory: ./Azure/Lab/automate-azure-tasks-with-powershell/
         env:
           LOCATION : "${{ github.event.inputs.location }}"
         shell: powershell
@@ -137,13 +138,16 @@ jobs:
           }
           Write-Output "The location ${LocationUsed_Disp} will be used."
           
-          if ( "${Env:GITHUB_ENV}" -eq $null ) {
+          if ( "${Env:GITHUB_ENV}" -ne $null ) {
+            Write-Output 'Setting Github Environment Variables. ';
+            Write-Output "GROUP_NAME=${groupname}";
             "GROUP_NAME=${groupname}"  >> "${Env:GITHUB_ENV}"
+            Write-Output "LOCATION=${LocationUsed}";
             "LOCATION=${LocationUsed}" >> "${Env:GITHUB_ENV}"
           }
 
       - name: Test
-        working-directory: ./Azure/Lab/
+        working-directory: ./Azure/Lab/automate-azure-tasks-with-powershell/
         env:
           VM_USERNAME  : "${{ secrets.USERNAME_DEFAULT }}"
           VM_PASSWORD  : "${{ secrets.PASSWORD_DEFAULT }}"
@@ -156,7 +160,7 @@ jobs:
           [System.String]                $username    =  "${Env:VM_USERNAME}";
           [System.Security.SecureString] $password    = ("${Env:VM_PASSWORD}" | ConvertTo-SecureString -AsPlainText -Force);
           [System.Management.Automation.PSCredential] $credential = [System.Management.Automation.PSCredential]::New(${username},${password});
-          [System.String]                $username_vm =${credential}.Username;
+          [System.String]                $username_vm = ${credential}.Username;
           Write-Output "Resource Group                     : ${resource_group}";
           Write-Output "Virtual Machine Location           : ${location_vm}";
           Write-Output "Virtual Machine Image              : ${image_vm}";

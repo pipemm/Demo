@@ -104,6 +104,7 @@ jobs:
         env:
           LOCATION : "${{ github.event.inputs.location }}"
         run: |
+          .\09_Resource_Group_Overview.ps1
           .\01_Get_Resource_Group_Information.ps1
 
       - name: Create Linux Virtual Machines

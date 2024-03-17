@@ -96,7 +96,7 @@ jobs:
           LOCATION : "${{ github.event.inputs.location }}"
         shell: powershell
         run: |
-          .\01_Get_Resource_Group_Information.ps1
+          .\\01_Get_Resource_Group_Information.ps1
 
       - name: Greate Linux Virtual Machines
         working-directory: ./Azure/Lab/automate-azure-tasks-with-powershell/

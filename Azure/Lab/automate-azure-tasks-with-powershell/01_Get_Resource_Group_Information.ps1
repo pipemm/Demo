@@ -24,7 +24,6 @@ if ( ${ResourceGroups}.Count -gt 0 ) {
     if ( $Location_Dict.Contains("${glocation}") ) {
         [System.String]$location_disp  = $Location_Dict["${glocation}"]
     }
-    Write-Output "The ${groupname} resource group will be used. Its location is ${location_disp}."
 } else {
     Write-Error -Message 'There is no resource group found. '
     exit 1;
@@ -38,6 +37,13 @@ if ( "${LocationUsed}" -eq 'default' ) {
 if ( $Location_Dict.Contains("${LocationUsed}") ) {
     [System.String]$LocationUsed_Disp  = $Location_Dict["${LocationUsed}"]
 }
+
+[Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResource[]]$resources = (Get-AzResource -ResourceGroupName "${groupname}");
+[System.Int32] $number_resources = ${resources}.Count;
+Write-Output ${resources};
+${resources} | Format-Table
+
+Write-Output "The ${groupname} resource group will be used. Its location is ${location_disp}. It contains ${number_resources} resource(s). "
 Write-Output "The location ${LocationUsed_Disp} will be used."
 
 if ( "${Env:GITHUB_ENV}" -ne $null ) {

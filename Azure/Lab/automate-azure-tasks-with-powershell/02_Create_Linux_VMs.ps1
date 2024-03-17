@@ -30,15 +30,24 @@ Write-Output "Number of Machines to be disployed : ${number_vm}";
 foreach( $n in 1..${number_vm} ){
     [System.String]$name_vm = "${prefix_vm}-${location_vm}-" + ${n}.ToString().PadLeft(3,'0')
     Write-Output "Deploying Virtual Machine : ${name_vm}";
-    $vm = (New-AzVm -ResourceGroupName "${resource_group}" -Name "${name_vm}" `
-            -Credential ${credential} `
-            -Location "${location_vm}" `
-            -Image "${image_vm}" `
-            -OpenPorts ${ports_open} `
-            -PublicIpAddressName "${name_vm}"
+    [Microsoft.Azure.Commands.Compute.Models.PSVirtualMachine]$vm = 
+        (
+            New-AzVm -ResourceGroupName "${resource_group}" -Name "${name_vm}" `
+                -Credential ${credential} `
+                -Location "${location_vm}" `
+                -Image "${image_vm}" `
+                -OpenPorts ${ports_open} `
+                -PublicIpAddressName "${name_vm}"
         );
-    ${vm}.GetType().FullName;
+    Write-Output "Information for the virtual machine ${name_vm} : ";
+    Write-Output ${vm};
+    Write-Output "HardwareProfile section of the virtual machine ${name_vm} : ";
     ${vm}.HardwareProfile;
-    ${vm}.StorageProfile.OsDisk;
-    ${vm} | Get-AzVMSize
+    Write-Output "StorageProfile section of the virtual machine ${name_vm} : ";
+    Write-Output ${vm}.StorageProfile;
+    Write-Output "Information on the disks of the virtual machine ${name_vm} : ";
+    Write-Output ${vm}.StorageProfile.OsDisk;
+    Write-Output "Available sizes for  the virtual machine ${name_vm} : ";
+    Write-Output (${vm} | Get-AzVMSize);
+    (${vm} | Get-AzVMSize).GetType().FullPa
 }

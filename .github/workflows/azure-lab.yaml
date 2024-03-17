@@ -79,6 +79,7 @@ jobs:
             ##'Az.Accounts',
             'Az.Resources',
             'Az.Compute',
+            'Az.Network',
             'Az'
           );
           [System.String[]]$skip = @(
@@ -134,9 +135,9 @@ jobs:
           VM_PASSWORD  : "${{ secrets.PASSWORD_DEFAULT }}"
           IMAGE        : "${{ github.event.inputs.image }}"
           NUM_VMS      : "${{ github.event.inputs.num_vms }}"
-          PORT_SSH     : "${{ github.event.inputs.port_open_ssh   && 22 }}"
-          PORT_RDP     : "${{ github.event.inputs.port_open_rdp   && 3389 }}"
-          PORT_RM      : "${{ github.event.inputs.port_open_winrm && 5985 }}"
+          PORT_SSH     : "${{ github.event.inputs.port_open_ssh   && 22   || '' }}"
+          PORT_RDP     : "${{ github.event.inputs.port_open_rdp   && 3389 || '' }}"
+          PORT_RM      : "${{ github.event.inputs.port_open_winrm && 5985 || '' }}"
         run: |
           .\02_Create_Linux_VMs.ps1
           .\09_Resource_Group_Overview.ps1

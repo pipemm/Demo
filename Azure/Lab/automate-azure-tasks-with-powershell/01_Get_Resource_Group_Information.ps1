@@ -2,17 +2,17 @@
 [System.Collections.Specialized.OrderedDictionary]                                        $Location_Dict = [ordered]@{};
 ${Locations} |
 Where-Object -FilterScript { $_.RegionType -eq 'Physical' } |
-ForEach-Object -Process {
-    [System.String]$Location         = $_.Location;
-    [System.String]$DisplayName      = $_.DisplayName;
-    [System.String]$PhysicalLocation = $_.PhysicalLocation;
-    [System.String]$GeographyGroup   = $_.GeographyGroup;
-    [System.String]$DisplayLocation  = "${PhysicalLocation}, ${GeographyGroup}";
-    if ( "${PhysicalLocation}" -eq '') {
-        [System.String]$DisplayLocation = "${GeographyGroup}";
+    ForEach-Object -Process {
+        [System.String]$Location         = $_.Location;
+        [System.String]$DisplayName      = $_.DisplayName;
+        [System.String]$PhysicalLocation = $_.PhysicalLocation;
+        [System.String]$GeographyGroup   = $_.GeographyGroup;
+        [System.String]$DisplayLocation  = "${PhysicalLocation}, ${GeographyGroup}";
+        if ( "${PhysicalLocation}" -eq '') {
+            [System.String]$DisplayLocation = "${GeographyGroup}";
+        }
+        $Location_Dict["${Location}"]    = "${DisplayName} (${Location}), ${DisplayLocation}";
     }
-    $Location_Dict["${Location}"]    = "${DisplayName} (${Location}), ${DisplayLocation}";
-}
 
 [Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceGroup[]]$ResourceGroups = (Get-AzResourceGroup);
 Write-Output ${ResourceGroups}
@@ -48,8 +48,8 @@ Write-Output "The location ${LocationUsed_Disp} will be used."
 
 if ( "${Env:GITHUB_ENV}" -ne $null ) {
     Write-Output 'Setting Github Environment Variables. ';
-    Write-Output "GROUP_NAME=${groupname}";
-    "GROUP_NAME=${groupname}"  >> "${Env:GITHUB_ENV}"
+    Write-Output "RESOURCEGROUPNAME=${groupname}";
+    "RESOURCEGROUPNAME=${groupname}" >> "${Env:GITHUB_ENV}"
     Write-Output "LOCATION=${LocationUsed}";
-    "LOCATION=${LocationUsed}" >> "${Env:GITHUB_ENV}"
+    "LOCATION=${LocationUsed}"       >> "${Env:GITHUB_ENV}"
 }

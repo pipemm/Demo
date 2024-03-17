@@ -108,6 +108,21 @@ jobs:
         run: |
           .\02_Create_Linux_VMs.ps1
 
+      - name: Check Virtual Machines
+        working-directory: .\Azure\Lab\automate-azure-tasks-with-powershell\
+        env:
+          VM_USERNAME  : "${{ secrets.USERNAME_DEFAULT }}"
+          VM_PASSWORD  : "${{ secrets.PASSWORD_DEFAULT }}"
+        run: |
+          .\03_Check_Linux_VMs.ps1
+      
+      - name: Delete Virtual Machines
+        if: always()
+        working-directory: .\Azure\Lab\automate-azure-tasks-with-powershell\
+        run: |
+         'testing' 
+
+
 
           
 

@@ -10,7 +10,7 @@ if ( ${NumberVM} -eq $null ) {
     [System.Int32] $NumberVM  = [System.Int32]9;
 }
 [System.Int32] $port_ssh_open  = 22;
-[System.String]$ImageVM        = "${Env:IMMAGE}";
+[System.String]$ImageVM        = "${Env:IMAGE}";
 
 
 [System.String]                $username    =  "${Env:VM_USERNAME}";

@@ -2,11 +2,11 @@
 ## https://learn.microsoft.com/en-us/training/modules/automate-azure-tasks-with-powershell/6-exercise-create-resource-interactively
 
 [System.Int32] $NumberVM      = [System.Int32]${Env:NUM_VMS};
-if ( $(NumberVM} -eq $null ) {
+if ( ${NumberVM} -eq $null ) {
     [System.Int32] $NumberVM  = [System.Int32]1;
-} elseif ( $(NumberVM} -lt 1) {
+} elseif ( ${NumberVM} -lt 1) {
     [System.Int32] $NumberVM  = [System.Int32]1;
-} elseif ( $(NumberVM} -gt 9) {
+} elseif ( ${NumberVM} -gt 9) {
     [System.Int32] $NumberVM  = [System.Int32]9;
 }
 [System.String]$ResourceGroup = "${Env:RESOURCEGROUPNAME}";

@@ -124,8 +124,10 @@ jobs:
           [System.String]  $prefix_vm  = 'testvm';
           [System.Int32[]] $ports_open = @(${port_ssh_open});
           foreach( $n in 1..${number_vm} ){
-            [System.String]$name_vm = "${prefix_vm}-${location_vm}-" + ${n}.ToString("{0:D3}")
+            [System.String]$name_vm = "${prefix_vm}-${location_vm}-" + ${n}.ToString().PadLeft(3,'0')
             Write-Output "Deploying Virtual Machine : ${name_vm}";
+            Import-Module -Name 'Az.Compute';
+            Get-Command -Name New-AzVm;
             New-AzVm -ResourceGroupName "${resource_group}" -Name "${name_vm}" `
               -Credential ${credential} `
               -Location "${location_vm}" `

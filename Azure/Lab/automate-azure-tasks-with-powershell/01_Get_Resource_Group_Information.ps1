@@ -1,5 +1,5 @@
-[Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceProviderLocation[]] $Locations     = (Get-AzLocation);
-[System.Collections.Specialized.OrderedDictionary]                                        $Location_Dict = [ordered]@{};
+[Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceProviderLocation[]] $Locations    = (Get-AzLocation);
+[System.Collections.Specialized.OrderedDictionary]                                        $LocationDict = [ordered]@{};
 ${Locations} |
 Where-Object -FilterScript { $_.RegionType -eq 'Physical' } |
     ForEach-Object -Process {
@@ -11,7 +11,7 @@ Where-Object -FilterScript { $_.RegionType -eq 'Physical' } |
         if ( "${PhysicalLocation}" -eq '') {
             [System.String]$DisplayLocation = "${GeographyGroup}";
         }
-        $Location_Dict["${Location}"]    = "${DisplayName} (${Location}), ${DisplayLocation}";
+        $LocationDict["${Location}"]    = "${DisplayName} (${Location}), ${DisplayLocation}";
     }
 
 [Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceGroup[]]$ResourceGroups = (Get-AzResourceGroup);
@@ -21,8 +21,8 @@ if ( ${ResourceGroups}.Count -gt 0 ) {
     [System.String]$groupname      = $group.ResourceGroupName;
     [System.String]$glocation      = $group.Location;
     [System.String]$location_disp  = "${glocation}";
-    if ( $Location_Dict.Contains("${glocation}") ) {
-        [System.String]$location_disp  = $Location_Dict["${glocation}"]
+    if ( $LocationDict.Contains("${glocation}") ) {
+        [System.String]$location_disp  = ${LocationDict}["${glocation}"]
     }
 } else {
     Write-Error -Message 'There is no resource group found. '
@@ -34,8 +34,8 @@ if ( "${LocationUsed}" -eq 'default' ) {
     [System.String]$LocationUsed = "${glocation}"
 }
 [System.String]$LocationUsed_Disp  = "${LocationUsed}";
-if ( $Location_Dict.Contains("${LocationUsed}") ) {
-    [System.String]$LocationUsed_Disp  = $Location_Dict["${LocationUsed}"]
+if ( $LocationDict.Contains("${LocationUsed}") ) {
+    [System.String]$LocationUsed_Disp  = ${LocationDict}["${LocationUsed}"]
 }
 
 Write-Output "The ${groupname} resource group will be used. Its location is ${location_disp}. "

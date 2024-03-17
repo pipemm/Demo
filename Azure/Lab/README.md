@@ -17,6 +17,3 @@ In the Azure Cloud Shell (PowerShell), obtain the Access Token and the Account I
 ```
 
 
-```
-
-```

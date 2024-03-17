@@ -9,7 +9,7 @@ ForEach-Object -Process {
     [System.String]$GeographyGroup   = $_.GeographyGroup;
     [System.String]$DisplayLocation  = "${PhysicalLocation}, ${GeographyGroup}";
     if ( "${PhysicalLocation}" -eq '') {
-    [System.String]$DisplayLocation = "${GeographyGroup}";
+        [System.String]$DisplayLocation = "${GeographyGroup}";
     }
     $Location_Dict["${Location}"]    = "${DisplayName} (${Location}), ${DisplayLocation}";
 }

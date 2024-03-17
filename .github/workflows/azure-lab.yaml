@@ -17,7 +17,6 @@ on:
         description: 'Location'
         type: choice
         required: ture
-        default: 'japaneast'
         options:
           - 'default'
           - 'westus2'
@@ -42,6 +41,21 @@ on:
         required: true
         default: 1
         type: number
+      port_open_ssh:
+        description: 'Open Default Port for Secure Shell'
+        required: true
+        default: false
+        type: boolean
+      port_open_rdp:
+        description: 'Open Default Port for Windows Remote Desktop'
+        required: true
+        default: false
+        type: boolean
+      port_open_winrm:
+        description: 'Open Default Port for Windows Remote Management'
+        required: true
+        default: false
+        type: boolean
       cleanup:
         description: 'Perform Clean-Up'
         required: true
@@ -51,7 +65,7 @@ on:
 
 jobs:
 
-  Create-an-Azure-Resource-using-scripts:
+  Create-Azure-Resources-using-scripts:
     runs-on: windows-2022
       ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
     environment: AzureLab
@@ -125,9 +139,11 @@ jobs:
         env:
           VM_USERNAME  : "${{ secrets.USERNAME_DEFAULT }}"
           VM_PASSWORD  : "${{ secrets.PASSWORD_DEFAULT }}"
+          IMAGE        : "${{ github.event.inputs.image }}"
           NUM_VMS      : "${{ github.event.inputs.num_vms }}"
         run: |
           .\02_Create_Linux_VMs.ps1
+          .\09_Resource_Group_Overview.ps1
 
       - name: Check Virtual Machines
         working-directory: .\Azure\Lab\automate-azure-tasks-with-powershell\
@@ -138,10 +154,11 @@ jobs:
           .\03_Check_Linux_VMs.ps1
       
       - name: Delete Virtual Machines
-        if: always()
+        if: ' ${{ always() && github.event.inputs.cleanup }} '
         working-directory: .\Azure\Lab\automate-azure-tasks-with-powershell\
         run: |
-         'testing' 
+          .\04_Delete_VMs.ps1
+          .\09_Resource_Group_Overview.ps1
 
 
 

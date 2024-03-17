@@ -140,7 +140,7 @@ jobs:
           if ( $Location_Dict.Contains("${LocationUsed}") ) {
             [System.String]$LocationUsed_Disp  = $Location_Dict["${LocationUsed}"]
           }
-          Write-Output "The location ${LocationUsed} will be used."
+          Write-Output "The location ${LocationUsed_Disp} will be used."
       
       - name: Test
         working-directory: ./Azure/Lab/

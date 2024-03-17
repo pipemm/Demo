@@ -36,6 +36,9 @@ jobs:
     runs-on: windows-2022
       ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
     environment: AzureLab
+    defaults:
+      run:
+        shell: powershell
 
     steps:
 
@@ -76,7 +79,6 @@ jobs:
         env:
           TOKEN : "${{ github.event.inputs.token }}"
           ID    : "${{ github.event.inputs.account_id }}"
-        shell: powershell
         run: |
           [System.String]$Token = "${Env:TOKEN}";
           [System.String]$Id    = "${Env:ID}";
@@ -95,7 +97,6 @@ jobs:
         working-directory: .\Azure\Lab\automate-azure-tasks-with-powershell\
         env:
           LOCATION : "${{ github.event.inputs.location }}"
-        shell: powershell
         run: |
           .\01_Get_Resource_Group_Information.ps1
 

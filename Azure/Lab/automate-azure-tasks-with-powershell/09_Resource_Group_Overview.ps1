@@ -20,6 +20,9 @@ ${ResourceGroups} |
         Write-Output "The ${GroupName} resource group contains ${NumberResources} resource(s): "
         Write-Output ${Resources};
         ${Resources} | Format-Table;
+        ${Resources} | 
+            Group-Object -Property ResourceType -NoElement |
+            Sort-Object -Property Count -Descending
         Write-Output '';
     }
 

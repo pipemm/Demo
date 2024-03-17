@@ -80,21 +80,28 @@ jobs:
           [System.String]$Token = "${Env:TOKEN}";
           [System.String]$Id    = "${Env:ID}";
           [Microsoft.Azure.Commands.Profile.Models.Core.PSAzureProfile]$Profile=(Connect-AzAccount -AccessToken "${Token}" -AccountId "${Id}");
-          ${Profile};
+          Write-Output ${Profile};
           [System.String]$Expire = (Get-AzAccessToken).ExpiresOn.ToString('u');
-          "The session will expire at ${Expire}."
+          Write-Output "The session will expire at ${Expire}. "
           [Microsoft.Azure.Commands.Profile.Models.PSAzureSubscription[]]$Subscriptions = (Get-AzSubscription);
-          ${Subscriptions};
+          Write-Output ${Subscriptions};
           if ( ${Subscriptions}.Count -eq 0 ) {
             Write-Error -Message 'There is no subscription. '
             exit 1;
           }
 
-          [Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceGroup[]]$ResourceGroups = (Get-AzResourceGroup);
-          ${ResourceGroups}
-          [System.String]$group = ${ResourceGroups}.ResourceGroupName;
-          "GROUP_NAME=${group}" >> "${Env:GITHUB_ENV}"
-          Get-Content -LiteralPath "${Env:GITHUB_ENV}"
+      - name: Get Resource Group Information
+        shell: powershell
+        run: |
+          if ( "${Env:GITHUB_ENV}" -eq $null ) {
+            [Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceGroup[]]$ResourceGroups = (Get-AzResourceGroup);
+            Write-Output ${ResourceGroups}
+            if ( ${ResourceGroups}.Count -gt 0 ) { 
+              [System.String]$group = ${ResourceGroups}[0].ResourceGroupName;
+              "GROUP_NAME=${group}" >> "${Env:GITHUB_ENV}"
+              Get-Content -LiteralPath "${Env:GITHUB_ENV}"
+            }
+          }
 
           (Get-AzLocation);
       

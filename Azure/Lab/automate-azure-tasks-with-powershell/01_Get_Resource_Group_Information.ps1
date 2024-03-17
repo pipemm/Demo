@@ -17,33 +17,33 @@ ForEach-Object -Process {
 [Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceGroup[]]$ResourceGroups = (Get-AzResourceGroup);
 Write-Output ${ResourceGroups}
 if ( ${ResourceGroups}.Count -gt 0 ) {
-[Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceGroup]$group = ${ResourceGroups}[0];
-[System.String]$groupname      = $group.ResourceGroupName;
-[System.String]$glocation      = $group.Location;
-[System.String]$location_disp  = "${glocation}";
-if ( $Location_Dict.Contains("${glocation}") ) {
-    [System.String]$location_disp  = $Location_Dict["${glocation}"]
-}
-Write-Output "The ${groupname} resource group will be used. Its location is ${location_disp}."
+    [Microsoft.Azure.Commands.ResourceManager.Cmdlets.SdkModels.PSResourceGroup]$group = ${ResourceGroups}[0];
+    [System.String]$groupname      = $group.ResourceGroupName;
+    [System.String]$glocation      = $group.Location;
+    [System.String]$location_disp  = "${glocation}";
+    if ( $Location_Dict.Contains("${glocation}") ) {
+        [System.String]$location_disp  = $Location_Dict["${glocation}"]
+    }
+    Write-Output "The ${groupname} resource group will be used. Its location is ${location_disp}."
 } else {
-Write-Error -Message 'There is no resource group found. '
-exit 1;
+    Write-Error -Message 'There is no resource group found. '
+    exit 1;
 }
 
 [System.String]$LocationUsed = "${Env:LOCATION}"
 if ( "${LocationUsed}" -eq 'default' ) {
-[System.String]$LocationUsed = "${glocation}"
+    [System.String]$LocationUsed = "${glocation}"
 }
 [System.String]$LocationUsed_Disp  = "${LocationUsed}";
 if ( $Location_Dict.Contains("${LocationUsed}") ) {
-[System.String]$LocationUsed_Disp  = $Location_Dict["${LocationUsed}"]
+    [System.String]$LocationUsed_Disp  = $Location_Dict["${LocationUsed}"]
 }
 Write-Output "The location ${LocationUsed_Disp} will be used."
 
 if ( "${Env:GITHUB_ENV}" -ne $null ) {
-Write-Output 'Setting Github Environment Variables. ';
-Write-Output "GROUP_NAME=${groupname}";
-"GROUP_NAME=${groupname}"  >> "${Env:GITHUB_ENV}"
-Write-Output "LOCATION=${LocationUsed}";
-"LOCATION=${LocationUsed}" >> "${Env:GITHUB_ENV}"
+    Write-Output 'Setting Github Environment Variables. ';
+    Write-Output "GROUP_NAME=${groupname}";
+    "GROUP_NAME=${groupname}"  >> "${Env:GITHUB_ENV}"
+    Write-Output "LOCATION=${LocationUsed}";
+    "LOCATION=${LocationUsed}" >> "${Env:GITHUB_ENV}"
 }

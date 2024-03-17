@@ -98,7 +98,7 @@ jobs:
         run: |
           .\01_Get_Resource_Group_Information.ps1
 
-      - name: Greate Linux Virtual Machines
+      - name: Create Linux Virtual Machines
         working-directory: ./Azure/Lab/automate-azure-tasks-with-powershell/
         env:
           VM_USERNAME  : "${{ secrets.USERNAME_DEFAULT }}"

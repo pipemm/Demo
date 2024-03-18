@@ -37,10 +37,10 @@ jobs:
           GUARD : "${{ secrets.PRIVACY_GUARD }}"
         working-directory: .\Artifact\
         run: |
-          (
-            "ACCESS_TOKEN='${Env:TOKEN}'"
-            "ACCOUNT_ID='${Env:ID}'"
-          ) | openssl enc -aes256 -pbkdf2 -e -pass pass:"${}" > es256.encrypted
+          "
+          ACCESS_TOKEN='${Env:TOKEN}'
+          ACCOUNT_ID='${Env:ID}'
+          " | openssl enc -aes256 -pbkdf2 -e -pass pass:"${Env:GUARD}" > es256.encrypted
 
       - uses: actions/upload-artifact@v4
         with:

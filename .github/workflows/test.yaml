@@ -35,7 +35,7 @@ jobs:
           TOKEN : "${{ github.event.inputs.token }}"
           ID    : "${{ github.event.inputs.account_id }}"
           GUARD : "${{ secrets.PRIVACY_GUARD }}"
-        working-directory: .\Artifact\
+        working-directory: Artifact\
         run: |
           "
           ACCESS_TOKEN='${Env:TOKEN}'
@@ -45,4 +45,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: test-artifact
-          path: .\Artifact\es256.encrypted
+          path: Artifact\es256.encrypted

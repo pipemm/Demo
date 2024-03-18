@@ -29,9 +29,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         ## https://github.com/actions/checkout
+      
+      - name: Generate Files
+        env:
+          TOKEN : "${{ github.event.inputs.token }}"
+          ID    : "${{ github.event.inputs.account_id }}"
+          GUARD : "${{ secrets.PRIVACY_GUARD }}"
+        working-directory: .\Artifact\
+        run: |
+          (
+            "ACCESS_TOKEN='${Env:TOKEN}'"
+            "ACCOUNT_ID='${Env:ID}'"
+          ) | openssl enc -aes256 -pbkdf2 -e -pass pass:"${}" > es256.encrypted
 
-      - uses: actions/download-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: test-artifact
-          path: Artifact/
-          
+          path: .\Artifact\es256.encrypted

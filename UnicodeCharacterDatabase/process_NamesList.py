@@ -1,11 +1,18 @@
 #!/bin/python3
 
+from sys import stdin, stdout
+from re  import search, match
+
 def main():
-    infile  = sys.stdin
-    outfile = sys.stdout
+    infile  = stdin
+    outfile = stdout
+    pattern_blockheader = r'^@\s'
+    pattern_subheader   = r'^@@\s'
     for line in infile:
-        outfile.write(line)
-        outfile.write('\n')
+        if mm:=match(pattern_blockheader, line):
+            outfile.write(line)
+        elif mm:=match(pattern_subheader, line):
+            outfile.write(line)
 
 
 if __name__ == '__main__':

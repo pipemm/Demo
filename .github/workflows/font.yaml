@@ -22,4 +22,8 @@ jobs:
       - name: Scan
         shell: powershell
         run: |
-          Get-ChildItem -LiteralPath 'C:\Windows\Fonts'
+          Get-ChildItem -LiteralPath 'C:\Windows\Fonts' |
+            ForEach-Object -Process {
+              [System.String]$FullName = $_.FullName;
+              $FullName;
+            }

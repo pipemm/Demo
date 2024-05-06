@@ -29,5 +29,7 @@ jobs:
               try { 
                 [System.Windows.Media.GlyphTypeface]$FontFile = New-Object -TypeName System.Windows.Media.GlyphTypeface -ArgumentList "${FullName}";
                 $FontFile;
-              } catch {;};
+              } catch {
+                Write-Error -Message "Ignoring ${FullName}";
+              };
             }

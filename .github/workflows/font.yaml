@@ -25,5 +25,5 @@ jobs:
           Get-ChildItem -LiteralPath 'C:\Windows\Fonts' |
             ForEach-Object -Process {
               [System.String]$FullName = $_.FullName;
-              $FullName;
+              New-Object -TypeName System.Windows.Media.GlyphTypeface -ArgumentList "${FullName}";
             }

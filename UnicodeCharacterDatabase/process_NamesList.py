@@ -8,10 +8,13 @@ def main():
     outfile = stdout
     pattern_blockheader = r'^@\s'
     pattern_subheader   = r'^@@\s'
+    pattern_codepoint   = r'^[0-9A-F]+\s'
     for line in infile:
         if mm:=match(pattern_blockheader, line):
             outfile.write(line)
         elif mm:=match(pattern_subheader, line):
+            outfile.write(line)
+        elif mm:=match(pattern_codepoint, line):
             outfile.write(line)
 
 

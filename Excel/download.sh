@@ -10,5 +10,5 @@ curl 'https://create.microsoft.com/api/graphql' \
   -H 'content-type: application/json' \
   -H 'origin: https://create.microsoft.com' \
   -H 'user-agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36' \
-  --data '@data.ql' |
+  --data '@request.ql' |
   python -m json.tool > test.json

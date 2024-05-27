@@ -1,0 +1,47 @@
+query getSearchTemplateGrid(
+  $query: String!
+  $filters: [String!]
+  $offset: Int
+  $limit: Int
+  $locale: String
+  $generic: Boolean
+  $collectionId: String
+  $orderSeed: String
+) {
+  searchTemplates(
+    query: $query
+    filters: $filters
+    locale: $locale
+    offset: $offset
+    limit: $limit
+    generic: $generic
+    collectionId: $collectionId
+    orderSeed: $orderSeed
+  ) {
+    id
+    ...SearchTemplateGrid_searchTemplates
+    __typename
+  }
+}
+
+fragment SearchTemplateGrid_searchTemplates on SearchTemplates {
+  templates {
+    templates {
+      id
+      ...TemplateThumbnailCard_template
+      __typename
+    }
+    __typename
+  }
+  totalCount
+  searchStatus
+  __typename
+}
+
+fragment TemplateThumbnailCard_template on Template {
+  title
+  longFormTitle
+  premium
+  templateContentType
+  __typename
+}

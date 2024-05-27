@@ -1,0 +1,32 @@
+query getSearchTemplateGrid(
+  $query: String!
+  $filters: [String!]
+  $offset: Int
+  $limit: Int
+  $locale: String
+  $generic: Boolean
+  $collectionId: String
+  $orderSeed: String
+) {
+  searchTemplates(
+    query: $query
+    filters: $filters
+    locale: $locale
+    offset: $offset
+    limit: $limit
+    generic: $generic
+    collectionId: $collectionId
+    orderSeed: $orderSeed
+  ) {
+    id
+    templates {
+      id
+      title
+      longFormTitle
+      premium
+      templateContentType
+    }
+    totalCount
+    searchStatus
+  }
+}

@@ -411,14 +411,6 @@
                 "totalCount": 1500,
                 "searchStatus": "SUCCESS",
                 "__typename": "SearchTemplates"
-            },
-            "componentContent": {
-                "id": "Y29tcG9uZW50LWNvbnRlbnQ=",
-                "templateThumbnailOverlay": {
-                    "ctaLabelPrefix": "Customize in",
-                    "__typename": "TemplateThumbnailOverlay"
-                },
-                "__typename": "ComponentContent"
             }
         }
     }

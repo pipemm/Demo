@@ -5,14 +5,6 @@
             "templates": {
                 "templates": [
                     {
-                        "id": "3445dcd8-2047-4602-8056-ea5c30d95b19",
-                        "title": "Assignment schedule",
-                        "longFormTitle": "Assignment schedule",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
                         "id": "cc8f8a79-96c3-4a3f-9398-5fdcfa9b27e9",
                         "title": "Sales invoice (simple lines design)",
                         "longFormTitle": "Sales invoice (simple lines design)",
@@ -21,73 +13,9 @@
                         "__typename": "Template"
                     },
                     {
-                        "id": "151ddd53-24bb-4f41-a3b0-d178e68734a2",
-                        "title": "Basic balance sheet",
-                        "longFormTitle": "Basic balance sheet",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "48f98fd1-a81d-4d08-9d99-6cb0fa8c5b52",
-                        "title": "Student schedule",
-                        "longFormTitle": "Student schedule",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "866209af-21e9-4546-8d32-04624d91daa1",
-                        "title": "Profit and loss income statement",
-                        "longFormTitle": "Profit and loss income statement",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "94c0fff6-ff52-412a-89a1-a09af97952bf",
-                        "title": "Quarterly sale report",
-                        "longFormTitle": "Quarterly sale report",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "09eef93c-0551-4864-9f87-312b1e0b1eb2",
-                        "title": "Manufacturing output chart",
-                        "longFormTitle": "Manufacturing output chart",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "8c1f0018-6c37-4fc5-9d36-08ed3e806005",
-                        "title": "Sales forecast tracker small business",
-                        "longFormTitle": "Sales forecast tracker small business",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "098a0353-643d-4b2e-9eac-ea919d7f3361",
-                        "title": "Run chart",
-                        "longFormTitle": "Run chart",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "6fe15a87-a8da-4dbd-80b3-5bcad9e2e035",
-                        "title": "Grocery list (with category totals)",
-                        "longFormTitle": "Grocery list (with category totals)",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "61e8414d-00ac-49ab-9013-4a60a2205656",
-                        "title": "Project to do list",
-                        "longFormTitle": "Project to do list",
+                        "id": "3445dcd8-2047-4602-8056-ea5c30d95b19",
+                        "title": "Assignment schedule",
+                        "longFormTitle": "Assignment schedule",
                         "premium": false,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"
@@ -101,33 +29,17 @@
                         "__typename": "Template"
                     },
                     {
-                        "id": "1ed52567-f187-484c-8bad-0ff5eb2f1e22",
-                        "title": "Regional sales chart",
-                        "longFormTitle": "Regional sales chart",
+                        "id": "866209af-21e9-4546-8d32-04624d91daa1",
+                        "title": "Profit and loss income statement",
+                        "longFormTitle": "Profit and loss income statement",
                         "premium": false,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"
                     },
                     {
-                        "id": "3c7da2d3-0806-4679-a49e-d2f517b0ea39",
-                        "title": "Contact list",
-                        "longFormTitle": "Contact list",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "51ec1b4d-92a5-4915-8d83-ea5155e0e4d0",
-                        "title": "Loan amortization schedule",
-                        "longFormTitle": "Loan amortization schedule",
-                        "premium": true,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "ab449fed-18a0-4af2-844b-0beecceecf83",
-                        "title": "Org charts (visual)",
-                        "longFormTitle": "Org charts (visual)",
+                        "id": "098a0353-643d-4b2e-9eac-ea919d7f3361",
+                        "title": "Run chart",
+                        "longFormTitle": "Run chart",
                         "premium": false,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"
@@ -141,38 +53,6 @@
                         "__typename": "Template"
                     },
                     {
-                        "id": "efbf4064-cbfc-4844-8c23-f685fc0d826d",
-                        "title": "Balance sheet",
-                        "longFormTitle": "Balance sheet",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "b0a247ff-298f-400f-9d2b-e6be95011bc1",
-                        "title": "Basic personal budget",
-                        "longFormTitle": "Basic personal budget",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "8109d3b2-f8ec-4907-bdc0-38249a20cd69",
-                        "title": "Billing statement",
-                        "longFormTitle": "Billing statement",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "a3fde570-770a-470d-ab91-2478070cdb9e",
-                        "title": "Graph paper",
-                        "longFormTitle": "Graph paper",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
                         "id": "fb2cd3fc-2ca9-4bfa-84b7-eaad71fbc98e",
                         "title": "Ticket sales tracker",
                         "longFormTitle": "Ticket sales tracker",
@@ -181,81 +61,25 @@
                         "__typename": "Template"
                     },
                     {
-                        "id": "331a20a1-7844-4039-9b75-45754e8dc2fd",
-                        "title": "Business budget",
-                        "longFormTitle": "Business budget",
+                        "id": "94c0fff6-ff52-412a-89a1-a09af97952bf",
+                        "title": "Quarterly sale report",
+                        "longFormTitle": "Quarterly sale report",
                         "premium": false,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"
                     },
                     {
-                        "id": "4958d145-e533-42d2-b7ba-bd638f96c769",
-                        "title": "Project performance report",
-                        "longFormTitle": "Project performance report",
+                        "id": "efbf4064-cbfc-4844-8c23-f685fc0d826d",
+                        "title": "Balance sheet",
+                        "longFormTitle": "Balance sheet",
                         "premium": false,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"
                     },
                     {
-                        "id": "d09ae26d-d81b-4522-9829-5b40c0d830c2",
-                        "title": "Weekly time sheet (8 1/2 x 11, landscape)",
-                        "longFormTitle": "Weekly time sheet (8 1/2 x 11, landscape)",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "91b9548b-6080-4dbc-bbe0-35bd56e81311",
-                        "title": "Monthly budget",
-                        "longFormTitle": "Monthly budget",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "d7228cf7-c1a0-4072-b713-3f36e0e5ef13",
-                        "title": "Sales invoice (simple design)",
-                        "longFormTitle": "Sales invoice (simple design)",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "d3ccfb24-2a15-472f-8254-ebe1883a6c4f",
-                        "title": "Weekly timesheet (8 1/2 x 11, portrait)",
-                        "longFormTitle": "Weekly timesheet (8 1/2 x 11, portrait)",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "923969b2-2d78-478e-a5b6-4af61cf100b0",
-                        "title": "Timesheet (weekly)",
-                        "longFormTitle": "Timesheet (weekly)",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "cc131202-7cd6-4aa6-b6a0-7b5d66d5762a",
-                        "title": "Five-day event calendar",
-                        "longFormTitle": "Five-day event calendar",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "26643cb7-03c5-475c-a87a-bc23c1a611fc",
-                        "title": "Daily checklist challenge",
-                        "longFormTitle": "Daily checklist challenge",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "ca9afd6a-d5ee-4cb2-8bb2-1fc9ebcac7f3",
-                        "title": "Simple invoice that calculates total",
-                        "longFormTitle": "Simple invoice that calculates total",
+                        "id": "6fe15a87-a8da-4dbd-80b3-5bcad9e2e035",
+                        "title": "Grocery list (with category totals)",
+                        "longFormTitle": "Grocery list (with category totals)",
                         "premium": false,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"
@@ -269,25 +93,41 @@
                         "__typename": "Template"
                     },
                     {
-                        "id": "1224b456-39f5-41e0-a737-dae8ac91f1dc",
-                        "title": "Elemental timesheet",
-                        "longFormTitle": "Elemental timesheet",
+                        "id": "d7228cf7-c1a0-4072-b713-3f36e0e5ef13",
+                        "title": "Sales invoice (simple design)",
+                        "longFormTitle": "Sales invoice (simple design)",
                         "premium": false,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"
                     },
                     {
-                        "id": "cd863781-8524-4552-8711-3af5eecaa085",
-                        "title": "Simple list",
-                        "longFormTitle": "Simple list",
+                        "id": "4958d145-e533-42d2-b7ba-bd638f96c769",
+                        "title": "Project performance report",
+                        "longFormTitle": "Project performance report",
                         "premium": false,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"
                     },
                     {
-                        "id": "53587d4d-8341-4a5f-8f2c-4d25596bed8f",
-                        "title": "Inventory list",
-                        "longFormTitle": "Inventory list",
+                        "id": "b3a410cc-f521-44c8-a72e-ab39815d9b4e",
+                        "title": "Profit loss statement",
+                        "longFormTitle": "Profit loss statement",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "b9cbb715-dd65-4c50-b548-6084a27ebf36",
+                        "title": "Warehouse inventory",
+                        "longFormTitle": "Warehouse inventory",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "3c7da2d3-0806-4679-a49e-d2f517b0ea39",
+                        "title": "Contact list",
+                        "longFormTitle": "Contact list",
                         "premium": false,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"
@@ -301,17 +141,105 @@
                         "__typename": "Template"
                     },
                     {
-                        "id": "12981456-c7fe-468a-bf3a-c8d9b912addd",
-                        "title": "Work order tracker",
-                        "longFormTitle": "Work order tracker",
+                        "id": "61e8414d-00ac-49ab-9013-4a60a2205656",
+                        "title": "Project to do list",
+                        "longFormTitle": "Project to do list",
                         "premium": false,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"
                     },
                     {
-                        "id": "100fccf4-e854-407e-b969-4a49e717bea3",
-                        "title": "Product price list",
-                        "longFormTitle": "Product price list",
+                        "id": "ab449fed-18a0-4af2-844b-0beecceecf83",
+                        "title": "Org charts (visual)",
+                        "longFormTitle": "Org charts (visual)",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "8109d3b2-f8ec-4907-bdc0-38249a20cd69",
+                        "title": "Billing statement",
+                        "longFormTitle": "Billing statement",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "151ddd53-24bb-4f41-a3b0-d178e68734a2",
+                        "title": "Basic balance sheet",
+                        "longFormTitle": "Basic balance sheet",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "d3ccfb24-2a15-472f-8254-ebe1883a6c4f",
+                        "title": "Weekly timesheet (8 1/2 x 11, portrait)",
+                        "longFormTitle": "Weekly timesheet (8 1/2 x 11, portrait)",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "53587d4d-8341-4a5f-8f2c-4d25596bed8f",
+                        "title": "Inventory list",
+                        "longFormTitle": "Inventory list",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "51ec1b4d-92a5-4915-8d83-ea5155e0e4d0",
+                        "title": "Loan amortization schedule",
+                        "longFormTitle": "Loan amortization schedule",
+                        "premium": true,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "ca9afd6a-d5ee-4cb2-8bb2-1fc9ebcac7f3",
+                        "title": "Simple invoice that calculates total",
+                        "longFormTitle": "Simple invoice that calculates total",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "48f98fd1-a81d-4d08-9d99-6cb0fa8c5b52",
+                        "title": "Student schedule",
+                        "longFormTitle": "Student schedule",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "5c5a8ea5-d609-44ef-9363-bb0463409537",
+                        "title": "Probate inventory",
+                        "longFormTitle": "Probate inventory",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "28155274-ed0f-43dd-83c4-0a79a4d7c517",
+                        "title": "Homework log",
+                        "longFormTitle": "Homework log",
+                        "premium": true,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "26643cb7-03c5-475c-a87a-bc23c1a611fc",
+                        "title": "Daily checklist challenge",
+                        "longFormTitle": "Daily checklist challenge",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "cd863781-8524-4552-8711-3af5eecaa085",
+                        "title": "Simple list",
+                        "longFormTitle": "Simple list",
                         "premium": false,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"
@@ -325,6 +253,62 @@
                         "__typename": "Template"
                     },
                     {
+                        "id": "a3fde570-770a-470d-ab91-2478070cdb9e",
+                        "title": "Graph paper",
+                        "longFormTitle": "Graph paper",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "cc131202-7cd6-4aa6-b6a0-7b5d66d5762a",
+                        "title": "Five-day event calendar",
+                        "longFormTitle": "Five-day event calendar",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "98f27753-2d3f-4187-bceb-b76079121811",
+                        "title": "Home inventory",
+                        "longFormTitle": "Home inventory",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "ebcaa05b-2f6c-4bb7-8e88-d33225dc8ec7",
+                        "title": "Party planner",
+                        "longFormTitle": "Party planner",
+                        "premium": true,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "8b2318c9-28db-4b66-b623-717334b2c58e",
+                        "title": "Grocery list",
+                        "longFormTitle": "Grocery list",
+                        "premium": true,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "b940298f-3e11-4732-a868-0a1a8d4de614",
+                        "title": "Invoice with tax calculation",
+                        "longFormTitle": "Invoice with tax calculation",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "b0a247ff-298f-400f-9d2b-e6be95011bc1",
+                        "title": "Basic personal budget",
+                        "longFormTitle": "Basic personal budget",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
                         "id": "923c86b5-63f8-42d1-99cb-c6ae4f4b679e",
                         "title": "Simple loan calculator and amortization table",
                         "longFormTitle": "Simple loan calculator and amortization table",
@@ -333,41 +317,33 @@
                         "__typename": "Template"
                     },
                     {
-                        "id": "588ac285-43b6-40df-a8a6-2374f72789f1",
-                        "title": "Work plan timeline",
-                        "longFormTitle": "Work plan timeline",
+                        "id": "09eef93c-0551-4864-9f87-312b1e0b1eb2",
+                        "title": "Manufacturing output chart",
+                        "longFormTitle": "Manufacturing output chart",
                         "premium": false,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"
                     },
                     {
-                        "id": "eafc43ca-22b6-40be-b288-58f7b5bb97da",
-                        "title": "Weekly time record small business",
-                        "longFormTitle": "Weekly time record small business",
+                        "id": "cf2db84f-7e1f-4140-a228-35e2c1636a19",
+                        "title": "Inventory list with highlighting",
+                        "longFormTitle": "Inventory list with highlighting",
                         "premium": false,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"
                     },
                     {
-                        "id": "175ff789-bc51-40e0-b6f8-8fa0125c1f4d",
-                        "title": "Basic invoice with unit price",
-                        "longFormTitle": "Basic invoice with unit price",
-                        "premium": false,
+                        "id": "4b371a73-0346-4f26-a194-75ec59ca6c0e",
+                        "title": "Weekly lesson planner",
+                        "longFormTitle": "Weekly lesson planner",
+                        "premium": true,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"
                     },
                     {
-                        "id": "13687d7a-a3e4-4d3a-a5be-4e0b8f3efb83",
-                        "title": "College loan calculator",
-                        "longFormTitle": "College loan calculator",
-                        "premium": false,
-                        "templateContentType": "EXCEL",
-                        "__typename": "Template"
-                    },
-                    {
-                        "id": "85b13c37-b78d-4cd4-bf0f-6c06b4d25e54",
-                        "title": "Any year calendar (1 month per tab)",
-                        "longFormTitle": "Any year calendar (1 month per tab)",
+                        "id": "3bfa8d02-823e-4c5b-9269-b829d3822a74",
+                        "title": "Volunteer assignments",
+                        "longFormTitle": "Volunteer assignments",
                         "premium": true,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"
@@ -389,17 +365,41 @@
                         "__typename": "Template"
                     },
                     {
-                        "id": "011bc58a-7255-44cf-aa2a-c6a0850d08ec",
-                        "title": "Personal monthly budget",
-                        "longFormTitle": "Personal monthly budget",
-                        "premium": true,
+                        "id": "1224b456-39f5-41e0-a737-dae8ac91f1dc",
+                        "title": "Elemental timesheet",
+                        "longFormTitle": "Elemental timesheet",
+                        "premium": false,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"
                     },
                     {
-                        "id": "e56f1018-db9a-4b6f-9984-315ced120dc0",
-                        "title": "Sales leads tracker",
-                        "longFormTitle": "Sales leads tracker",
+                        "id": "1abfc262-0c26-42c8-82d0-6d8c56f84e12",
+                        "title": "Expense report basic",
+                        "longFormTitle": "Expense report basic",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "13687d7a-a3e4-4d3a-a5be-4e0b8f3efb83",
+                        "title": "College loan calculator",
+                        "longFormTitle": "College loan calculator",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "d09ae26d-d81b-4522-9829-5b40c0d830c2",
+                        "title": "Weekly time sheet (8 1/2 x 11, landscape)",
+                        "longFormTitle": "Weekly time sheet (8 1/2 x 11, landscape)",
+                        "premium": false,
+                        "templateContentType": "EXCEL",
+                        "__typename": "Template"
+                    },
+                    {
+                        "id": "759b5b46-4462-4e7a-b5b2-5280507b1723",
+                        "title": "Commercial invoice",
+                        "longFormTitle": "Commercial invoice",
                         "premium": false,
                         "templateContentType": "EXCEL",
                         "__typename": "Template"

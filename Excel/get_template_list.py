@@ -1,12 +1,12 @@
-import requests
-import json
-from collections import OrderedDict
+
+from collections  import OrderedDict
+from json         import dumps, loads
+from urllib.parse import quote
 
 url_api    = 'https://create.microsoft.com/api/graphql'
 url_origin = 'https://create.microsoft.com'
 
 def request_data( offset=0, limit=50 ):
-    from json import dumps
     request_dict   = OrderedDict()
     variables_dict = OrderedDict()
     variables_dict['query']   = '*'
@@ -29,8 +29,16 @@ headers = {
 }
 
 from urllib.request import Request, urlopen
+
 req = Request(url=url_api, data=request_body.encode(), headers=headers)
 with urlopen(req) as f:
-    print(f.read().decode('utf-8'))
+    response = f.read().decode()
+    obj      = loads(response)
+    for tt in obj['data']['searchTemplates']['templates']['templates']:
+        title = tt['title']
+        title = title.lower().replace(' ', '-')
+        title = quote(title, safe='()')
+        id    = tt['id']
+        print( '{}-{}'.format(title,id) )
 
 

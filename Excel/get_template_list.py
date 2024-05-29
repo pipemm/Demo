@@ -30,11 +30,11 @@ headers = {
 
 delta  = 50
 offset = 0
+total  = 0
 
 while True:
     request_body = request_data( offset=offset, limit=delta )
     request      = Request(url=url_api, data=request_body.encode(), headers=headers)
-    total        = 0
     with urlopen(request) as f:
         response = f.read().decode()
         obj      = loads(response)
@@ -44,10 +44,10 @@ while True:
             title = quote(title, safe='()')
             id    = tt['id']
             print( '{}-{}'.format(title,id) )
-        total = int(obj['data']['searchTemplates']['totalCount'])
-        if offset>total:
-            break
-        else:
-            offset += delta
+    total = int(obj['data']['searchTemplates']['totalCount'])
+    if offset>total:
+        break
+    else:
+        offset += delta
 
 

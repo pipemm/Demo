@@ -30,7 +30,6 @@ headers = {
 
 delta  = 50
 offset = 0
-total  = 0
 
 while True:
     request_body = request_data( offset=offset, limit=delta )
@@ -44,8 +43,7 @@ while True:
             title = quote(title, safe='()')
             id    = tt['id']
             print( '{}-{}'.format(title,id) )
-    total = int(obj['data']['searchTemplates']['totalCount'])
-    if offset>total:
+    if len(obj['data']['searchTemplates']['templates']['templates'])<=0:
         break
     else:
         offset += delta

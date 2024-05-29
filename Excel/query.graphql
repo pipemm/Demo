@@ -39,6 +39,7 @@ fragment SearchTemplateGrid_searchTemplates on SearchTemplates {
 }
 
 fragment TemplateThumbnailCard_template on Template {
+  id
   title
   longFormTitle
   premium

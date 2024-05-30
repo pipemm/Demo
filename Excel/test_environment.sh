@@ -30,4 +30,4 @@ lscpu --help
  
 lscpu --version
 
-lscpu --all --output-all
+lscpu --output-all

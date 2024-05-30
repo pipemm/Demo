@@ -1,0 +1,59 @@
+
+name: Excel
+run-name: Excel Checking
+
+on:
+  
+  schedule:
+    # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+    - cron:  '34 2  *  *  MON'
+          #   │  │  │  │  │
+          #   │  │  │  │  └─── day of the week  (0–6, SUN-SAT)
+          #   │  │  │  └────── month            (1–12)
+          #   │  │  └───────── day of the month (1–31)
+          #   │  └──────────── hour             (0–23)
+          #   └─────────────── minute           (0–59)
+  
+  push:
+    # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push
+    branches:
+      - 'main'
+    paths:
+      - 'Excel/**.*'
+
+  workflow_dispatch:
+
+
+jobs:
+  
+  Downloads:
+    
+    runs-on: ubuntu-22.04
+    ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+    ## https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md
+
+    steps:
+      
+      - name: Checkout
+        uses: actions/checkout@v4
+        ## https://github.com/actions/checkout
+
+      - name: Check Environment
+        working-directory: ./Excel/
+        run: |
+          bash test_environment.sh
+
+      - name: Download Templates
+        working-directory: ./Excel/
+        run: |
+          bash download_template.sh
+
+      - name: Upload Artifact - Excel Template
+        uses: actions/upload-artifact@v4
+          ## https://github.com/actions/upload-artifact
+        with:
+          name: ExcelTemplate
+          path: |
+            Template/*.xlsx
+
+      

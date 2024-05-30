@@ -39,12 +39,12 @@ jobs:
         ## https://github.com/actions/checkout
 
       - name: Check Environment
-        working-directory: ./Excel/
+        working-directory: Excel/
         run: |
           bash test_environment.sh
 
       - name: Download Templates
-        working-directory: ./Excel/
+        working-directory: Excel/
         run: |
           bash download_template.sh
 
@@ -54,6 +54,6 @@ jobs:
         with:
           name: ExcelTemplate
           path: |
-            Template/*.xlsx
+            Excel/Template/*.xlsx
 
       

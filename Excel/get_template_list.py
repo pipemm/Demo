@@ -1,3 +1,4 @@
+#!/bin/bash
 
 from collections    import OrderedDict
 from json           import dumps, loads
@@ -71,6 +72,6 @@ def main():
         else:
             offset += delta
 
-if __name__ = '__main__':
+if __name__ == '__main__':
     main()
 

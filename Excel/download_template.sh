@@ -15,9 +15,10 @@ python3 get_template_list.py 'QL/query.graphql' |
   do
     url_page="${url_template%/}/${line%%   *}"
     filename="${line##*   }.xlsx"
+    filename="${filename//[?]/ }"
     echo "visiting ${url_page}"
     url_file=$(
-      curl --location "${url_page}" |
+      curl --silent --location "${url_page}" |
       sed --silent 's!^.*"link":"\([^"]*\.xlsx\)".*$!\1!p' |
       head --lines=1
     )

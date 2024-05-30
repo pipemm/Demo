@@ -24,6 +24,6 @@ python3 get_template_list.py 'QL/query.graphql' |
     )
     echo "  saving ${filename}"
     echo "  from ${url_file}"
-    curl --output "${folder_template%/}/${filename}" "${url_file}"
+    curl --silent --output "${folder_template%/}/${filename}" "${url_file}"
   done
 

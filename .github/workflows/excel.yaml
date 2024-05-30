@@ -29,8 +29,8 @@ jobs:
   Downloads:
     
     runs-on: ubuntu-22.04
-    ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
-    ## https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md
+      ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+      ## https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md
 
     steps:
       
@@ -56,4 +56,38 @@ jobs:
           path: |
             Excel/Template/*.xlsx
 
+  Checking:
+    
+    runs-on: ubuntu-22.04
+      ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+      ## https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md
       
+    steps:
+      - name: Download Artifact - Excel Template
+        uses: actions/download-artifact@v4
+          ## https://github.com/actions/download-artifact
+        with:
+          name: ExcelTemplate
+          path: Excel/Template/
+
+      - name: Download Templates
+        working-directory: Excel/
+        run: |
+          ls Template/
+
+  Testing:
+    
+    runs-on: ubuntu-22.04
+      ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+      ## https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md
+
+    steps:
+      
+      - name: Checkout
+        uses: actions/checkout@v4
+        ## https://github.com/actions/checkout
+
+      - name: Check Environment
+        working-directory: Excel/
+        run: |
+          bash test_environment.sh

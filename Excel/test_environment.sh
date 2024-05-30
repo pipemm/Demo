@@ -17,3 +17,17 @@ python3 --version
 which -a curl
 
 curl --help
+
+which -a nproc
+
+nproc --help
+
+nproc --all
+
+which -a lscpu
+
+lscpu --help
+ 
+lscpu --version
+
+lscpu --all --output-all

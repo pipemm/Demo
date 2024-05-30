@@ -39,10 +39,10 @@ while True:
         obj      = loads(response)
         for tt in obj['data']['searchTemplates']['templates']['templates']:
             title = tt['title']
-            title = title.lower().replace(' ', '-')
-            title = quote(title, safe='()')
+            name  = title.lower().replace(' ', '-')
+            name = quote(name, safe='()')
             id    = tt['id']
-            print( '{}-{}'.format(title,id) )
+            print( '{}-{}   {}'.format(name,id,title) )
     if len(obj['data']['searchTemplates']['templates']['templates'])<=0:
         break
     else:

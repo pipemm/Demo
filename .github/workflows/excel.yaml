@@ -26,7 +26,7 @@ on:
 
 jobs:
   
-  Downloads:
+  Get-Template:
     
     runs-on: ubuntu-22.04
       ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
@@ -61,6 +61,7 @@ jobs:
     runs-on: ubuntu-22.04
       ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
       ## https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md
+    needs: Get-Template
       
     steps:
       - name: Download Artifact - Excel Template
@@ -70,7 +71,7 @@ jobs:
           name: ExcelTemplate
           path: Excel/Template/
 
-      - name: Download Templates
+      - name: List Templates
         working-directory: Excel/
         run: |
           ls Template/
@@ -87,7 +88,7 @@ jobs:
         uses: actions/checkout@v4
         ## https://github.com/actions/checkout
 
-      - name: Check Environment
+      - name: Download Templates
         working-directory: Excel/
         run: |
-          bash test_environment.sh
+          bash download_template2.sh

@@ -74,7 +74,7 @@ jobs:
       - name: List Templates
         working-directory: Excel/
         run: |
-          ls Template/
+          bash test_file.sh
 
   Testing:
     

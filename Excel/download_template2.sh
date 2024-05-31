@@ -10,6 +10,9 @@ url_template='https://create.microsoft.com/template/'
 folder_template='Template/'
 mkdir --parent "${folder_template%/}/"
 
+python3 'PythonScript/get_template_list.py' 'QL/query.graphql' |
+  jq
+
 python3 get_template_list.py 'QL/query.graphql' |
   while read -r line
   do

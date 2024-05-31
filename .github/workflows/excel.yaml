@@ -36,7 +36,7 @@ jobs:
       
       - name: Checkout
         uses: actions/checkout@v4
-        ## https://github.com/actions/checkout
+          ## https://github.com/actions/checkout
 
       - name: Check Environment
         working-directory: Excel/
@@ -64,6 +64,10 @@ jobs:
     needs: Get-Template
       
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+          ## https://github.com/actions/checkout
+
       - name: Download Artifact - Excel Template
         uses: actions/download-artifact@v4
           ## https://github.com/actions/download-artifact
@@ -86,7 +90,7 @@ jobs:
       
       - name: Checkout
         uses: actions/checkout@v4
-        ## https://github.com/actions/checkout
+          ## https://github.com/actions/checkout
 
       - name: Download Templates
         working-directory: Excel/

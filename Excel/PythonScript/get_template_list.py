@@ -2,6 +2,7 @@
 
 from collections    import OrderedDict
 from json           import dumps, loads
+from csv            import DictWriter
 from urllib.parse   import quote
 from urllib.request import Request, urlopen
 
@@ -38,9 +39,10 @@ def get_query():
         file_query = argv[1]
     else:
         return None
-    if isfile(file_query):
-        with open(file_query, 'r') as f:
-            return f.read()
+    if not isfile(file_query):
+        return None
+    with open(file_query, 'r') as f:
+        return f.read()
 
 delta  = 50
 offset = 0

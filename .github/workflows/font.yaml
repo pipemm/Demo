@@ -41,11 +41,13 @@ jobs:
           path: Font\File\Basic\
 
       - name: List Optional Features
+        working-directory: Font\
         shell: powershell
         run: |
           .\Script\PowerShell\ListOptionalFeature.ps1
 
       - name: Install Font
+        working-directory: Font\
         shell: powershell
         run: |
           .\Script\PowerShell\InstallJapanese.ps1

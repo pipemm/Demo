@@ -40,10 +40,12 @@ jobs:
           name: Fonts
           path: Font\File\Basic\
 
-      - name: Test
+      - name: List Optional Features
         shell: powershell
         run: |
-          'Get-WindowsCapability -Online';
-          Get-WindowsCapability -Online;
-          'Get-WindowsOptionalFeature -Online'
-          Get-WindowsOptionalFeature -Online;
+          .\Script\PowerShell\ListOptionalFeature.ps1
+
+      - name: Install Font
+        shell: powershell
+        run: |
+          .\Script\PowerShell\InstallJapanese.ps1

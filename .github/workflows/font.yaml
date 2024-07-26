@@ -45,9 +45,12 @@ jobs:
         shell: powershell
         run: |
           .\Script\PowerShell\ListOptionalFeature.ps1
+          .\Script\PowerShell\ListLanguageFont.ps1
 
       - name: Install Font
         working-directory: Font\
         shell: powershell
         run: |
           .\Script\PowerShell\InstallJapanese.ps1
+          .\Script\PowerShell\ListOptionalFeature.ps1
+

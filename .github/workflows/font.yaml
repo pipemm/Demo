@@ -43,7 +43,7 @@ jobs:
                 Write-Warning "Ignoring ${FullName}";
               };
             }
-          '.\Script\PowerShell\ScanFont.ps1';
+          .\Script\PowerShell\ScanFont.ps1;
       
       - name: Test
         shell: powershell

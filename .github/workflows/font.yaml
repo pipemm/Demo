@@ -1,6 +1,8 @@
 
 name: Font
 
+on:
+
   push:
     # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push
     branches:
@@ -8,7 +10,6 @@ name: Font
     paths:
       - 'Font/**.*'
 
-on:
   workflow_dispatch:
 
 jobs:

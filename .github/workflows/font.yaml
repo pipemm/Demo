@@ -1,6 +1,13 @@
 
 name: Font
 
+  push:
+    # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push
+    branches:
+      - 'main'
+    paths:
+      - 'Font/**.*'
+
 on:
   workflow_dispatch:
 
@@ -19,7 +26,8 @@ jobs:
         uses: actions/checkout@v4
         ## https://github.com/actions/checkout
 
-      - name: Scan
+      - name: Scan Existing Fonts
+        working-directory: Font\
         shell: powershell
         run: |
           Add-Type -AssemblyName PresentationFramework;
@@ -33,6 +41,7 @@ jobs:
                 Write-Warning "Ignoring ${FullName}";
               };
             }
+          '.\Script\PowerShell\ScanFont.ps1';
       
       - name: Test
         shell: powershell

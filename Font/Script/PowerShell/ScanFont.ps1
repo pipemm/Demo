@@ -8,7 +8,7 @@ ForEach-Object -Process {
     [System.String]$FullName = $_.FullName;
     try { 
         [System.Windows.Media.GlyphTypeface]$FontFile = New-Object -TypeName System.Windows.Media.GlyphTypeface -ArgumentList "${FullName}";
-        ${FontFile";
+        ${FontFile};
         Copy-Item "${FullName}" -Destination "${PathBasic}"
     } catch {
         Write-Warning "Ignoring ${FullName}";

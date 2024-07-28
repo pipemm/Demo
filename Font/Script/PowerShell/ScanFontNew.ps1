@@ -1,7 +1,7 @@
 
 [System.String]$PathBasic = 'File\Basic\';
 [System.String]$PathNew   = 'File\New\';
-
+New-Item -Name "${PathNew}" -ItemType 'directory';
 
 Add-Type -AssemblyName PresentationFramework;
 Get-ChildItem -LiteralPath 'C:\Windows\Fonts' |

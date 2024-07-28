@@ -10,9 +10,15 @@ ForEach-Object -Process {
     [System.String]$Name          = $_.Name;
     [System.String]$PathFileBasic = (Join-Path -Path "${PathBasic}" -ChildPath "${Name}");
     if (Test-Path "${PathFileBasic}" -PathType 'Leaf') {
-        $PathFileBasic;
+        Write-Information "Ignoring  ${FullName}";
     } else {
-        $FullName ;
+        try { 
+            [System.Windows.Media.GlyphTypeface]$FontFile = New-Object -TypeName System.Windows.Media.GlyphTypeface -ArgumentList "${FullName}";
+            ${FontFile};
+            Copy-Item "${FullName}" -Destination "${PathNew}";
+        } catch {
+            Write-Warning "Ignoring ${FullName}";
+        };
     }
     
 }

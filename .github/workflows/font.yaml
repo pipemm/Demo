@@ -54,3 +54,8 @@ jobs:
           .\Script\PowerShell\InstallJapanese.ps1
           .\Script\PowerShell\ListOptionalFeature.ps1
 
+      - name: Check New
+        working-directory: Font\
+        shell: powershell
+        run: |
+          .\Script\PowerShell\ScanFontNew.ps1

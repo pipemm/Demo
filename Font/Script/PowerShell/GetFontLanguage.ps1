@@ -10,7 +10,9 @@ if ( "${Language}" -ne '' ) {
             [System.Windows.Media.GlyphTypeface]$FontFile = New-Object -TypeName System.Windows.Media.GlyphTypeface -ArgumentList "${FullName}";
             $FamilyNames = ${FontFile}.FamilyNames;  ## MS.Internal.Text.TextInterface.LocalizedStrings
             $FamilyName  = (${FamilyNames} | Where-Object {$_.Key -eq "${Language}"}).Value;
-            ${FontFile} | Add-Member -MemberType NoteProperty -Name 'FamilyName' -Value ${FamilyName};
-        } | 
-        Where-Object FamilyName -NE $null;
+            if ( ${FamilyName} -ne $null ) {
+                ${FontFile} | Add-Member -MemberType NoteProperty -Name 'FamilyName' -Value ${FamilyName};
+                ${FontFile};
+            }
+        } ;
 }

@@ -15,7 +15,7 @@ on:
 
 jobs:
 
-  Scan-Font:
+  Basic-Font:
     runs-on: windows-latest
       ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
     defaults:
@@ -64,4 +64,32 @@ jobs:
         # https://github.com/actions/upload-artifact
         with:
           name: ExtraJpan
-          path: Font\File\New\
+          path: Font\File\Optional\
+
+  Optional-Font:
+    strategy:
+      matrix:
+        lang: 
+          - Hant
+          - Hans
+          - Jpan
+          - Kore
+    runs-on: windows-latest
+      ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+    defaults:
+      run:
+        shell: powershell
+    env:
+      Language: ${{ matrix.lang }}
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        ## https://github.com/actions/checkout
+
+      - name: Print Lang
+        working-directory: Font\
+        shell: powershell
+        run: |
+          $env:Language;

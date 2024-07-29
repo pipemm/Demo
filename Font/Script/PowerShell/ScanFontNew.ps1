@@ -1,6 +1,6 @@
 
 [System.String]$PathBasic = 'File\Basic\';
-[System.String]$PathNew   = 'File\New\';
+[System.String]$PathNew   = 'File\Optional\';
 New-Item -Name "${PathNew}" -ItemType 'directory';
 
 Add-Type -AssemblyName PresentationFramework;

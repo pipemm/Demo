@@ -1,7 +1,7 @@
 
-[System.String]$PathBasic = 'File\Basic\';
-[System.String]$PathNew   = 'File\Optional\';
-New-Item -Name "${PathNew}" -ItemType 'directory';
+[System.String]$PathBasic   = 'File\Basic\';
+[System.String]$Pathptional = 'File\Optional\';
+New-Item -Name "${Pathptional}" -ItemType 'directory';
 
 Add-Type -AssemblyName PresentationFramework;
 Get-ChildItem -LiteralPath 'C:\Windows\Fonts' |
@@ -15,7 +15,7 @@ ForEach-Object -Process {
         try { 
             [System.Windows.Media.GlyphTypeface]$FontFile = New-Object -TypeName System.Windows.Media.GlyphTypeface -ArgumentList "${FullName}";
             ${FontFile};
-            Copy-Item "${FullName}" -Destination "${PathNew}";
+            Copy-Item "${FullName}" -Destination "${Pathptional}";
         } catch {
             Write-Warning "Ignoring ${FullName}";
         };

@@ -76,6 +76,13 @@ jobs:
         run: |
           .\Script\PowerShell\InstallOptional.ps1
 
+      - name: List Optional Features
+        working-directory: Font\
+        shell: powershell
+        run: |
+          .\Script\PowerShell\ListOptionalFeature.ps1
+          .\Script\PowerShell\ListLanguageFont.ps1
+
       - uses: actions/download-artifact@v4
         ## https://github.com/actions/download-artifact
         with:
@@ -86,7 +93,7 @@ jobs:
         working-directory: Font\
         shell: powershell
         run: |
-          .\Script\PowerShell\ScanFontOptional.ps1
+          .\Script\PowerShell\ScanFontOptional.ps1 -InformationAction Continue;
           if ( "${env:GITHUB_ENV}" -ne $null ) {
             "ARTIFACT_TARGET=Optional$env:Language";
             "ARTIFACT_TARGET=Optional$env:Language" >> "${env:GITHUB_ENV}";
@@ -98,3 +105,38 @@ jobs:
           name: ${{ env.ARTIFACT_TARGET }}
           path: Font\File\Optional\
 
+  CJK-Font:
+    strategy:
+      matrix:
+        lang: 
+          - zh-TW
+          - zh-HK
+          - zh-SG
+          - zh-CN
+          - ja-JP
+          - ko-KR
+    runs-on: windows-latest
+      ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+    needs: Optional-Font
+    defaults:
+      run:
+        shell: powershell
+    env:
+      Language: ${{ matrix.lang }}
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        ## https://github.com/actions/checkout
+
+      - uses: actions/download-artifact@v4
+        ## https://github.com/actions/download-artifact
+        with:
+          path: Font\File\CJK\
+
+      - name: Get Font
+        working-directory: Font\
+        shell: powershell
+        run: |
+          .\Script\PowerShell\GetFontLanguage.ps1

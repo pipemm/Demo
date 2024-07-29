@@ -1,5 +1,5 @@
 
-[System.String]$Language = $env:Language;
+[System.String]$Language = "${env:Language}";
 
 if ( "${Language}" -ne '' ) {
     Get-WindowsCapability -Online |

@@ -47,27 +47,6 @@ jobs:
           .\Script\PowerShell\ListOptionalFeature.ps1
           .\Script\PowerShell\ListLanguageFont.ps1
 
-      - name: Install Font
-        working-directory: Font\
-        shell: powershell
-        env: 
-          Language: Jpan
-        run: |
-          .\Script\PowerShell\InstallOptional.ps1
-          .\Script\PowerShell\ListOptionalFeature.ps1
-
-      - name: Check New
-        working-directory: Font\
-        shell: powershell
-        run: |
-          .\Script\PowerShell\ScanFontOptional.ps1
-
-      - uses: actions/upload-artifact@v4
-        ## https://github.com/actions/upload-artifact
-        with:
-          name: ExtraJpan
-          path: Font\File\Optional\
-
   Optional-Font:
     strategy:
       matrix:
@@ -112,4 +91,10 @@ jobs:
             "ARTIFACT_TARGET=Optional$env:Language";
             "ARTIFACT_TARGET=Optional$env:Language" >> "${env:GITHUB_ENV}";
           }
+
+      - uses: actions/upload-artifact@v4
+        ## https://github.com/actions/upload-artifact
+        with:
+          name: ${{ env.ARTIFACT_TARGET }}
+          path: Font\File\Optional\
 

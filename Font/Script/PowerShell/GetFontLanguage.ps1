@@ -5,7 +5,7 @@
 "${Language}";
 
 Add-Type -AssemblyName PresentationFramework;
-Get-ChildItem -LiteralPath "${PathCJK}" |
+Get-ChildItem -Recurse -File -LiteralPath "${PathCJK}" |
 ForEach-Object -Process {
     [System.String]$FullName = $_.FullName;
     $FullName;

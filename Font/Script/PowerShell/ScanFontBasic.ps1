@@ -3,7 +3,7 @@
 New-Item -Name "${PathBasic}" -ItemType 'directory';
 
 Add-Type -AssemblyName PresentationFramework;
-Get-ChildItem -LiteralPath 'C:\Windows\Fonts' |
+Get-ChildItem -LiteralPath 'C:\Windows\Fonts\' |
 ForEach-Object -Process {
     [System.String]$FullName = $_.FullName;
     try { 

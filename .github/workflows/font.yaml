@@ -50,8 +50,10 @@ jobs:
       - name: Install Font
         working-directory: Font\
         shell: powershell
+        env: 
+          Language: Jpan
         run: |
-          .\Script\PowerShell\InstallJapanese.ps1
+          .\Script\PowerShell\InstallOptional.ps1
           .\Script\PowerShell\ListOptionalFeature.ps1
 
       - name: Check New
@@ -76,6 +78,7 @@ jobs:
           - Kore
     runs-on: windows-latest
       ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+    needs: Basic-Font
     defaults:
       run:
         shell: powershell

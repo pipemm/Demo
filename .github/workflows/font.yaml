@@ -140,3 +140,13 @@ jobs:
         shell: powershell
         run: |
           .\Script\PowerShell\GetFontLanguage.ps1
+          if ( "${env:GITHUB_ENV}" -ne $null ) {
+            "ARTIFACT_TARGET=font-$env:Language";
+            "ARTIFACT_TARGET=font-$env:Language" >> "${env:GITHUB_ENV}";
+          }
+
+      - uses: actions/upload-artifact@v4
+        ## https://github.com/actions/upload-artifact
+        with:
+          name: ${{ env.ARTIFACT_TARGET }}
+          path: Font\File\Target\

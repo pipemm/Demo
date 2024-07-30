@@ -9,6 +9,7 @@ if ( "${Language}" -ne '' ) {
     Get-ChildItem -Recurse -File -LiteralPath "${PathCJK}" |
         ForEach-Object -Process {
             [System.String]$FullName = $_.FullName;
+            [System.String]$Name     = $_.Name;
             [System.Windows.Media.GlyphTypeface]$FontFile = New-Object -TypeName System.Windows.Media.GlyphTypeface -ArgumentList "${FullName}";
             $FamilyNames = ${FontFile}.FamilyNames;  ## MS.Internal.Text.TextInterface.LocalizedStrings
             $FamilyName  = (${FamilyNames} | Where-Object {$_.Key -eq "${Language}"}).Value;
@@ -21,7 +22,9 @@ if ( "${Language}" -ne '' ) {
                 }
                 ${FontFile} | Add-Member -MemberType NoteProperty -Name 'FamilyName' -Value ${FamilyName};
                 ${FontFile} | Add-Member -MemberType NoteProperty -Name 'FaceName'   -Value ${FaceName};
+                ${FontFile} | Add-Member -MemberType NoteProperty -Name 'FileName'   -Value ${Name};
                 ${FontFile};
             }
-        } ;
+        } |
+        Select-Object -Property FileName, FamilyName, FaceName, Style, Weight, Stretch, Version, GlyphCount;
 }

@@ -4,6 +4,16 @@ run-name: Fonts (Windows)
 
 on:
 
+  schedule:
+    # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+    - cron:  '12 3  *  *  TUE'
+          #   │  │  │  │  │
+          #   │  │  │  │  └─── day of the week  (0–6, SUN-SAT)
+          #   │  │  │  └────── month            (1–12)
+          #   │  │  └───────── day of the month (1–31)
+          #   │  └──────────── hour             (0–23)
+          #   └─────────────── minute           (0–59)
+
   push:
     # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push
     branches:
@@ -69,6 +79,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         ## https://github.com/actions/checkout
+
+      - name: Test
+        working-directory: Font\
+        shell: powershell
+        run: |
+          .\Script\PowerShell\Test.ps1
 
       - name: Install Font
         working-directory: Font\

@@ -12,9 +12,11 @@ echo '{
   jq --arg db      'sample_weatherdata' '.database   = $db'
 )
 
-curl --location --request POST "${ENDPOINT%/}/action/findOne" \
+URL_API="${ENDPOINT%/}/action/findOne"
+
+curl --location --request POST "${URL_API}" \
   --header 'Content-Type: application/json' \
   --header 'Access-Control-Request-Headers: *' \
-  --header "api-key: ${DATA_API_KEY}" \
+  --header "api-key: ${API_KEY}" \
   --data-raw "${data}"
 

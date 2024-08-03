@@ -28,7 +28,7 @@ jobs:
   Get-Data-Catalog:
     runs-on: ubuntu-latest
       ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
-    environment: MongoDB1
+    environment: MongoDB2
     defaults:
       run:
         shell: bash
@@ -39,6 +39,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         ## https://github.com/actions/checkout
+
+      - name: Test
+        working-directory: MongoDB/
+        run: |
+          bash Script/Bash/Test.sh
 
       - name: Get Data Catalog
         env:

@@ -26,6 +26,7 @@ on:
 jobs:
 
   Get-Data-Catalog:
+    name: Get Data Catalog
     runs-on: ubuntu-latest
       ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
     environment: MongoDB2
@@ -54,7 +55,9 @@ jobs:
           bash Script/Bash/Get-Data-Catalog.sh
 
 
-  Connect-DB:
+  Count-Documents:
+    name: Count Documents
+    needs: Get-Data-Catalog
     runs-on: ubuntu-latest
       ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
     environment: MongoDB1

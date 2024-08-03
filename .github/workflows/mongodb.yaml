@@ -1,0 +1,50 @@
+
+name: MongoDB
+run-name: MongoDB
+
+on:
+
+  schedule:
+    # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#schedule
+    - cron:  '5  4  *  *  WED'
+          #   │  │  │  │  │
+          #   │  │  │  │  └─── day of the week  (0–6, SUN-SAT)
+          #   │  │  │  └────── month            (1–12)
+          #   │  │  └───────── day of the month (1–31)
+          #   │  └──────────── hour             (0–23)
+          #   └─────────────── minute           (0–59)
+
+  push:
+    # https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#push
+    branches:
+      - 'main'
+    paths:
+      - 'MongoDB/**.*'
+
+  workflow_dispatch:
+
+jobs:
+
+  Connect-DB:
+    runs-on: ubuntu-latest
+      ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+    environment: MongoDB1
+    defaults:
+      run:
+        shell: bash
+          ## https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#jobsjob_iddefaultsrunshell
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        ## https://github.com/actions/checkout
+
+      - name: Test
+        env:
+          ENDPOINT : "${{ secrets.DATA_API_URL_ENDPOINT }}"
+          API_KEY  : "${{ secrets.DATA_API_KEY }}"
+          CLUSTER  : "${{ secrets.CLUSTER_VENDOR_LOCATION }}"
+        working-directory: MongoDB/
+        run: |
+          bash Script/Bash/TestAPI.sh

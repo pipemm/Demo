@@ -1,19 +1,23 @@
 {
-    "dataSource": "__CLUSTER__",
-    "database":   "__DATABASE_NAME__",
-    "collection": "__COLLECTION_NAME__",
-    "pipeline": [
-      {
-        "$group": {
-          "_id": null,
-          "count": {
-            "$sum": 1
-          },
-          "first": {
-            "$first": "$_id"
-          }
+  "dataSource": "__CLUSTER__",
+  "database": "__DATABASE_NAME__",
+  "collection": "__COLLECTION_NAME__",
+  "pipeline": [
+    {
+      "$group": {
+        "_id": null,
+        "count": {
+          "$sum": 1
+        },
+        "first": {
+          "$first": "$_id"
         }
-      },
-      { "$unset": [ "_id" ] }
-    ]
-  }
+      }
+    },
+    {
+      "$unset": [
+        "_id"
+      ]
+    }
+  ]
+}

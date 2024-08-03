@@ -1,5 +1,9 @@
 #!/usr/bin/bash
 
+URL_API="${ENDPOINT%/}/action/findOne"
+## https://www.mongodb.com/docs/atlas/app-services/data-api/openapi/#operation/aggregate
+## https://www.mongodb.com/docs/atlas/app-services/data-api/examples/
+
 data=$(
 echo '{
     "collection": "__COLLECTION_NAME__",
@@ -12,11 +16,10 @@ echo '{
   jq --arg db      'sample_weatherdata' '.database   = $db'
 )
 
-URL_API="${ENDPOINT%/}/action/findOne"
-
 curl --location --request POST "${URL_API}" \
   --header 'Content-Type: application/json' \
   --header 'Access-Control-Request-Headers: *' \
   --header "api-key: ${API_KEY}" \
-  --data-raw "${data}"
+  --data-raw "${data}" |
+  jq
 

@@ -25,6 +25,30 @@ on:
 
 jobs:
 
+  Get-Data-Catalog:
+    runs-on: ubuntu-latest
+      ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+    environment: MongoDB1
+    defaults:
+      run:
+        shell: bash
+          ## https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#jobsjob_iddefaultsrunshell
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+        ## https://github.com/actions/checkout
+
+      - name: Get Data Catalog
+        env:
+          ENDPOINT : "${{ secrets.HTTPS_ENDPOINT }}"
+          API_KEY  : "${{ secrets.APP_API_KEY }}"
+        working-directory: MongoDB/
+        run: |
+          bash Script/Bash/Get-Data-Catalog.sh
+
+
   Connect-DB:
     runs-on: ubuntu-latest
       ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories

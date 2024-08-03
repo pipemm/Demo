@@ -10,7 +10,7 @@
             "$sum": 1
           },
           "first": {
-            "$first": "_id"
+            "$first": "$_id"
           }
         }
       }

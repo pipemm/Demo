@@ -27,8 +27,17 @@ URL_API="${ENDPOINT%/}/action/aggregate"
 ## https://www.mongodb.com/docs/atlas/app-services/data-api/openapi/#operation/aggregate
 ## https://www.mongodb.com/docs/atlas/app-services/data-api/examples/
 
-FILE_DATA='Request/json/data-aggregate.json'
-cat "${FILE_DATA}" |
+file_data='Request/json/data-aggregate.json'
+data=$(
+  cat "${file_data}" |
   jq --arg source  "${CLUSTER}"         '.dataSource = $source'  |
   jq --arg db      'sample_weatherdata' '.database   = $db'      |
   jq --arg collect 'data'               '.collection = $collect'
+)
+
+curl --location --request POST "${URL_API}" \
+  --header 'Content-Type: application/json' \
+  --header 'Access-Control-Request-Headers: *' \
+  --header "api-key: ${API_KEY}" \
+  --data-raw "${data}" |
+  jq

@@ -26,12 +26,13 @@ cat "${filecatalog}" |
       jq --arg db         "${db}"         '.database   = $db'         |
       jq --arg collection "${collection}" '.collection = $collection'
     )
-    echo "${data}"
+    echo "database   : ${db}"
+    echo "collection : ${collection}"
+    curl --location --request POST "${URL_API}" \
+      --header 'Content-Type: application/json' \
+      --header 'Access-Control-Request-Headers: *' \
+      --header "api-key: ${API_KEY}" \
+      --data-raw "${data}" |
+      jq
   done
 
-curl --location --request POST "${URL_API}" \
-  --header 'Content-Type: application/json' \
-  --header 'Access-Control-Request-Headers: *' \
-  --header "api-key: ${API_KEY}" \
-  --data-raw "${data}" |
-  jq

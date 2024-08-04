@@ -12,8 +12,9 @@ data=$(
   jq --arg collect 'data'               '.collection = $collect'
 )
 
-filecatalog='Data-Catalog/Data-Catalog.json'
-cat "${filecatalog}"
+filecatalog='Data-Catalog.json'
+cat "${filecatalog}" |
+  jq
 
 curl --location --request POST "${URL_API}" \
   --header 'Content-Type: application/json' \

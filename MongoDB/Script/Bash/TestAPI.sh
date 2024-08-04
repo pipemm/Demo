@@ -15,7 +15,7 @@ data=$(
 filecatalog='Data-Catalog.json'
 cat "${filecatalog}" |
   jq '.databases | [.[] | {database:.name, collections}]' |
-  jq '[.[] | . ]'
+  jq '[.[] | .database as $database ]'
 
 curl --location --request POST "${URL_API}" \
   --header 'Content-Type: application/json' \

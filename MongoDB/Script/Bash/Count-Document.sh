@@ -7,9 +7,7 @@ URL_API="${ENDPOINT%/}/action/aggregate"
 file_data='Request/json/data-aggregate.json'
 datatemplate=$(
   cat "${file_data}" |
-  jq --arg source  "${CLUSTER}"         '.dataSource = $source'  |
-  jq --arg db      'sample_weatherdata' '.database   = $db'      |
-  jq --arg collect 'data'               '.collection = $collect'
+  jq --arg source "${CLUSTER}" '.dataSource = $source'
 )
 
 filecatalog='Data-Catalog.json'

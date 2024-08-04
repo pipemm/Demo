@@ -85,11 +85,11 @@ jobs:
           name: Data-Catalog
           path: MongoDB/
 
-      - name: Test
+      - name: Count Document
         env:
           ENDPOINT : "${{ secrets.DATA_API_URL_ENDPOINT }}"
           API_KEY  : "${{ secrets.DATA_API_KEY }}"
           CLUSTER  : "${{ secrets.CLUSTER_VENDOR_LOCATION }}"
         working-directory: MongoDB/
         run: |
-          bash Script/Bash/TestAPI.sh
+          bash Script/Bash/Count-Document.sh

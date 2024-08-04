@@ -52,8 +52,15 @@ jobs:
           API_KEY  : "${{ secrets.APP_API_KEY }}"
         working-directory: MongoDB/
         run: |
-          bash Script/Bash/Get-Data-Catalog.sh
+          mkdir --parent Artifact/
+          bash Script/Bash/Get-Data-Catalog.sh |
+            tee Artifact/Data-Catalog.json
 
+      - uses: actions/upload-artifact@v4
+          ## https://github.com/actions/upload-artifact
+        with:
+          name: Data-Catalog
+          path: MongoDB/Artifact/Data-Catalog.json
 
   Count-Documents:
     name: Count Documents
@@ -72,6 +79,12 @@ jobs:
         uses: actions/checkout@v4
         ## https://github.com/actions/checkout
 
+      - uses: actions/download-artifact@v4
+          ## https://github.com/actions/download-artifact
+        with:
+          name: Data-Catalog
+          path: MongoDB/
+
       - name: Test
         env:
           ENDPOINT : "${{ secrets.DATA_API_URL_ENDPOINT }}"
@@ -79,4 +92,5 @@ jobs:
           CLUSTER  : "${{ secrets.CLUSTER_VENDOR_LOCATION }}"
         working-directory: MongoDB/
         run: |
+          ls -R
           bash Script/Bash/TestAPI.sh

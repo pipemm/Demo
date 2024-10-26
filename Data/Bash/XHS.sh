@@ -43,7 +43,7 @@ cat "${FileChannel}" |
   while read -r id
   do
     ifilen=$( echo "${id}" | tr --complement '[:alnum:]' '_' )
-    ifile="i_${ifilen%_}"
+    ifile="initial_${ifilen%_}"
     filejs="${FolderDownload%/}/${ifile}.js"
     filejson="${FolderOut%/}/${ifile}.json"
     url="${URL_Base}?channel_id=${id}"
@@ -51,4 +51,18 @@ cat "${FileChannel}" |
     node "${ScriptJ2J}" "${filejs}" 'initial_data' |
       jq > "${filejson}"
   done
+
+FileList="${FolderOut%/}/URL.tsv"
+echo id$'\t'displayTitle$'\t'channel > "${FileList}"
+ls ${FolderOut%/}/i*.json |
+  while read -r json
+  do
+    cat "${json}" |
+      jq '.feed | {currentChannel: .currentChannel, feeds: [ .feeds[] | {id: [.id, "?xsec_token=", .xsecToken] | add, displayTitle: .noteCard.displayTitle} ]}' |
+      jq '. as $feed | .feeds | [ .[] | {id, displayTitle, channel: $feed.currentChannel} ]' |
+      jq '.[]|[.id, .displayTitle, .channel]' |
+      jq  --raw-output '@tsv'
+  done >> "${FileList}"
+
+cat "${FileList}"
 

@@ -22,11 +22,22 @@ curl "${XHS_URL_Base}" \
 FolderJS='JavaScript/'
 ScriptJ2J="${FolderJS%/}/js2json.js"
 
-FolderJSON='JSON/'
-mkdir --parent "${FolderJSON%/}/"
+FolderOut='Output/'
+mkdir --parent "${FolderOut%/}/"
 
-FileMain="${FolderJSON%/}/initial.json"
+FileMain="${FolderOut%/}/initial.json"
 node "${ScriptJ2J}" "${FileMainJS}" 'initial_data' |
   jq > "${FileMain}"
 
+FileChannel="${FolderOut%/}/channels.json"
+cat "${FileMain}" |
+  jq '.feed.channels.categories' > "${FileChannel}"
+
+cat "${FileChannel}" |
+  jq --raw-output '.[].id' |
+  while read -r id
+  do
+    echo $(echo "${id}"|tr --complement '[:alnum:]' '_' )
+    url="${XHS_URL_Base}?channel_id=${id}"
+  done
 

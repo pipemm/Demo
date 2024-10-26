@@ -23,14 +23,31 @@ on:
       - 'Data/**.*'
 
   workflow_dispatch:
+    inputs:
+      ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+      system-linux:
+        description: 'Linux Version'
+        required: true
+        default: 'ubuntu-latest'
+        type: choice
+        options:
+        - ubuntu-latest
+        - ubuntu-24.04
+        - ubuntu-22.04
+        - ubuntu-20.04
 
 jobs:
   
   Job-XHS:
     
-    runs-on: ubuntu-22.04
+    runs-on: ${{ inputs.system-linux || 'ubuntu-latest' }}
       ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
       ## https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md
+    environment: Data
+    defaults:
+      run:
+        shell: bash
+          ## https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#jobsjob_iddefaultsrunshell
 
     steps:
       
@@ -47,3 +64,10 @@ jobs:
         working-directory: Data/
         run: |
           bash Bash/XHS.sh
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+          ## https://github.com/actions/upload-artifact
+        with:
+          name: X_Data
+          path: Data/Output/

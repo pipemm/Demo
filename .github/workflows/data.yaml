@@ -61,6 +61,10 @@ jobs:
           bash Bash/Test.sh
 
       - name: Download Data
+        env:
+          UserAgent  : "${{ secrets.UserAgent }}"
+          URL_Base   : "${{ secrets.XHS_URL_Base }}"
+          VAR_Target : "${{ secrets.XHS_VAR_Target }}"
         working-directory: Data/
         run: |
           bash Bash/XHS.sh

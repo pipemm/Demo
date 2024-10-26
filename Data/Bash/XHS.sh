@@ -1,8 +1,8 @@
 #!/usr/bin/bash
 
-if [[ -z "${UserAgent}" || -z "${XHS_URL_Base}" || -z "${XHS_VAR_Target}" ]]
+if [[ -z "${UserAgent}" || -z "${URL_Base}" || -z "${VAR_Target}" ]]
 then
-  echo 'variable missing: UserAgent or XHS_URL_Base or XHS_VAR_Target'
+  echo 'variable missing: UserAgent or URL_Base or VAR_Target'
   exit 1
 fi
 
@@ -10,11 +10,11 @@ FolderDownload='Download/'
 mkdir --parent "${FolderDownload%/}/"
 
 FileMainJS="${FolderDownload%/}/initial.js"
-curl "${XHS_URL_Base}" \
+curl "${URL_Base}" \
   --header 'accept: text/html' \
   --header 'cache-control: no-cache' \
   --header "user-agent: ${UserAgent}" |
-  sed --silent "s!^.*<script>window.${XHS_VAR_Target}=!!p" |
+  sed --silent "s!^.*<script>window.${VAR_Target}=!!p" |
   sed --silent 's!</script>.*$!!p' |
   head --lines=1 |
   sed 's!^\(.*\)$!var initial_data = \1;!' > "${FileMainJS}"
@@ -37,7 +37,10 @@ cat "${FileChannel}" |
   jq --raw-output '.[].id' |
   while read -r id
   do
-    echo $(echo "${id}"|tr --complement '[:alnum:]' '_' )
-    url="${XHS_URL_Base}?channel_id=${id}"
+    ifilen=$( echo "${id}" | tr --complement '[:alnum:]' '_' )
+    ifile="i_${ifilen%_}.js"
+    filejs="${FolderDownload%/}/${ifile}"
+    url="${URL_Base}?channel_id=${id}"
+    echo "${filejs}"
   done
 

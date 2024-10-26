@@ -9,15 +9,20 @@ fi
 FolderDownload='Download/'
 mkdir --parent "${FolderDownload%/}/"
 
+function download_i () {
+  local urli="${1}"
+  curl "${urli}" \
+    --header 'accept: text/html' \
+    --header 'cache-control: no-cache' \
+    --header "user-agent: ${UserAgent}" |
+    sed --silent "s!^.*<script>window.${VAR_Target}=!!p" |
+    sed --silent 's!</script>.*$!!p' |
+    head --lines=1 |
+    sed 's!^\(.*\)$!var initial_data = \1;!'
+}
+
 FileMainJS="${FolderDownload%/}/initial.js"
-curl "${URL_Base}" \
-  --header 'accept: text/html' \
-  --header 'cache-control: no-cache' \
-  --header "user-agent: ${UserAgent}" |
-  sed --silent "s!^.*<script>window.${VAR_Target}=!!p" |
-  sed --silent 's!</script>.*$!!p' |
-  head --lines=1 |
-  sed 's!^\(.*\)$!var initial_data = \1;!' > "${FileMainJS}"
+download_i "${URL_Base}" > "${FileMainJS}"
 
 FolderJS='JavaScript/'
 ScriptJ2J="${FolderJS%/}/js2json.js"
@@ -38,9 +43,12 @@ cat "${FileChannel}" |
   while read -r id
   do
     ifilen=$( echo "${id}" | tr --complement '[:alnum:]' '_' )
-    ifile="i_${ifilen%_}.js"
-    filejs="${FolderDownload%/}/${ifile}"
+    ifile="i_${ifilen%_}"
+    filejs="${FolderDownload%/}/${ifile}.js"
+    filejson="${FolderOut%/}/${ifile}.json"
     url="${URL_Base}?channel_id=${id}"
-    echo "${filejs}"
+    download_i "${url}" > "${filejs}"
+    node "${ScriptJ2J}" "${filejs}" 'initial_data' |
+      jq > "${filejson}"
   done
 

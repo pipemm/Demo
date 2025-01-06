@@ -73,15 +73,12 @@ jobs:
     environment: CMS-DEMO
     needs: job-cms-seed
 
-      - name: Checkout
-        uses: actions/checkout@v4
-          ## https://github.com/actions/checkout
 
       - name: Segment Job
         env:
           URL_Prefix : "${{ secrets.PREFIX }}"
           SEGMENT    : "${{ needs.job-cms-seed.outputs.segments}}"
-        working-directory: Dispatch/
+        ##working-directory: Dispatch/
         run: |
           echo "${SEGMENT}"
 

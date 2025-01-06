@@ -33,7 +33,7 @@ do
 done | 
   tee "${filelog}"
 
-if [[ -n "${GITHUB_ENV}"]]
+if [[ -n "${GITHUB_ENV}" ]]
 then
   echo "sname=${sname}" |
     tee --append "${GITHUB_ENV}"

@@ -27,7 +27,7 @@ do
     sed --silent '/^content-disposition:/p' |
     while read -r hd
     do
-      filename="${hd##*filename=}"
+      filename="${hd#*filename=}"
       echo "${id} ${filename}"
     done
 done | 

@@ -16,21 +16,25 @@ fi
 
 folderlog='segment/'
 mkdir --parent "${folderlog%/}/"
-filelog="${folderlog%/}/segment-${Segment}.txt"
+sname="segment-${Segment}"
+filelog="${folderlog%/}/${sname}.txt"
 
 for iid in {0..99}
 do
   id=$(( Segment + iid ))
-  echo "${id}"
   url="${Prefix%/}/${id}"
   curl --silent --head "${url}" |
     sed --silent '/^content-disposition:/p' |
     while read -r hd
     do
       filename="${hd##*filename=}"
-      echo "${id} ${filename}" | 
-        tee "${filelog}"
+      echo "${id} ${filename}"
     done
-done
+done | 
+  tee "${filelog}"
 
-
+if [[ -n "${GITHUB_ENV}"]]
+then
+  echo "sname=${sname}" |
+    tee --append "${GITHUB_ENV}"
+fi

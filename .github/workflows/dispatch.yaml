@@ -52,7 +52,7 @@ jobs:
         run: |
           idstart="${ID_Base::-5}00000"
           segments=$(
-            for seg in {0..5}
+            for seg in {0..3}
               do
                 segment="${seg}000"
                 echo $((idstart + segment))
@@ -62,8 +62,8 @@ jobs:
           )
           if [[ -n "${GITHUB_OUTPUT}" ]]
           then
-            echo "segments=${segments}"
-            echo "segments=${segments}" >> "${GITHUB_OUTPUT}"
+            echo "segments=${segments}" |
+              tee --append "${GITHUB_OUTPUT}"
           fi
 
   job-matrex:
@@ -95,4 +95,4 @@ jobs:
         working-directory: Dispatch/
         shell: bash
         run: |
-          echo "${SEGMENT}"
+          bash search.sh

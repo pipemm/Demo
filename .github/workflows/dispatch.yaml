@@ -1,4 +1,4 @@
-name: DispatchJobs
+name: Dispatch DEMO
 run-name: Dispatch DEMO
 
 on:
@@ -48,3 +48,4 @@ jobs:
         working-directory: Dispatch/
         run: |
           echo "${ID_Base}"
+          echo "${ID_Base::-5}"

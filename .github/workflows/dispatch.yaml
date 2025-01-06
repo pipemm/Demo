@@ -71,12 +71,11 @@ jobs:
       ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
       ## https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md
     environment: CMS-DEMO
-    needs: job-cms-seed
-
+    needs:
+    - job-cms-seed
+    
+    steps
+    
       - name: Segment Job
-        env:
-          URL_Prefix : "${{ secrets.PREFIX }}"
-          ##SEGMENT    : "${{ needs.job-cms-seed.outputs.segments }}"
-        ##working-directory: Dispatch/
         run: |
           echo "${SEGMENT}"

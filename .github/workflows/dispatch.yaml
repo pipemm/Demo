@@ -72,13 +72,13 @@ jobs:
       ## https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md
     environment: CMS-DEMO
     needs: job-cms-seed
-    strategy:
-      matrix:
-        segment: ${{ fromJSON(needs.job-cms-seed.outputs.segments) }}
     defaults:
       run:
         shell: bash
           ## https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#jobsjob_iddefaultsrunshell
+    strategy:
+      matrix:
+        segment: ${{ fromJSON(needs.job-cms-seed.outputs.segments) }}
 
       - name: Checkout
         uses: actions/checkout@v4

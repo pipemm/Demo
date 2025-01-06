@@ -4,12 +4,12 @@ thisscript=$(realpath --canonicalize-existing "${0}")
 thispath="${thisscript%/*}/"
 cd "${thispath}"
 
-if [[ ! -n "${PREFIX}" ]]
+if [[ ! -n "${Prefix}" ]]
 then
   exit 1
 fi
 
-if [[ ! -n "${SEGMENT}" ]]
+if [[ ! -n "${Segment}" ]]
 then
   exit 1
 fi

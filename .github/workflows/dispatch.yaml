@@ -43,7 +43,8 @@ jobs:
         uses: actions/checkout@v4
           ## https://github.com/actions/checkout
 
-      - id: seek
+      - name: Seeds Generation
+        id: seek
         env:
           ID_Base  : "${{ inputs.number-base }}"
         working-directory: Dispatch/
@@ -75,7 +76,7 @@ jobs:
       - name: Segment Job
         env:
           URL_Prefix : "${{ secrets.PREFIX }}"
-          SEGMENT    : "${{ needs.job-cms-seed.outputs.segments }}"
+          ##SEGMENT    : "${{ needs.job-cms-seed.outputs.segments }}"
         ##working-directory: Dispatch/
         run: |
           echo "${SEGMENT}"

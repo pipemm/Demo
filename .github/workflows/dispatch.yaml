@@ -1,0 +1,50 @@
+name: DispatchJobs
+run-name: Dispatch DEMO
+
+on:
+
+  workflow_dispatch:
+    inputs:
+      ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+      system-linux:
+        description: 'Linux Version'
+        required: true
+        default: 'ubuntu-latest'
+        type: choice
+        options:
+        - ubuntu-latest
+        - ubuntu-24.04
+        - ubuntu-22.04
+        - ubuntu-20.04
+      number-base:
+        description: 'Base Number'
+        required: true
+        type: number
+        default: 101015000
+
+
+jobs:
+
+  Job-CMS-Seek:
+
+    runs-on: ${{ inputs.system-linux || 'ubuntu-latest' }}
+      ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+      ## https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md
+    environment: CMS-DEMO
+    defaults:
+      run:
+        shell: bash
+          ## https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#jobsjob_iddefaultsrunshell
+
+    steps:
+      
+      - name: Checkout
+        uses: actions/checkout@v4
+          ## https://github.com/actions/checkout
+
+      - name: Check Environment
+        env:
+          ID_Base  : "${{ inputs.number-base }}"
+        working-directory: Dispatch/
+        run: |
+          echo "${ID_Base}"

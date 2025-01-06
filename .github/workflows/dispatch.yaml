@@ -72,9 +72,6 @@ jobs:
       ## https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md
     environment: CMS-DEMO
     needs: job-cms-seed
-    strategy:
-      matrix:
-        segment: ${{ fromJSON(needs.job-cms-seed.outputs.segments) }}
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -83,7 +80,7 @@ jobs:
       - name: Segment Job
         env:
           URL_Prefix : "${{ secrets.PREFIX }}"
-          SEGMENT    : "${{ matrix.segment }}"
+          SEGMENT    : "${{ needs.job-cms-seed.outputs.segments }}"
         working-directory: Dispatch/
         run: |
           echo "${SEGMENT}"

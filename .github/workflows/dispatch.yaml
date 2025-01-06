@@ -48,6 +48,7 @@ jobs:
         env:
           ID_Base  : "${{ inputs.number-base }}"
         working-directory: Dispatch/
+        shell: bash
         run: |
           idstart="${ID_Base::-5}00000"
           segments=$(
@@ -73,6 +74,13 @@ jobs:
     environment: CMS-DEMO
     needs:
       - job-cms-seed
+    strategy:
+      matrix:
+        segment: ${{ fromJSON(needs.job-cms-seed.outputs.segments) }}
+    defaults:
+      run:
+        shell: bash
+          ## https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#jobsjob_iddefaultsrunshell
     
     steps:
 
@@ -85,5 +93,6 @@ jobs:
           URL_Prefix : "${{ secrets.PREFIX }}"
           SEGMENT    : "${{ matrix.segment }}"
         working-directory: Dispatch/
+        shell: bash
         run: |
           echo "${SEGMENT}"

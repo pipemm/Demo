@@ -25,7 +25,7 @@ on:
 
 jobs:
 
-  Job-CMS-Seek:
+  job-cms-seed:
 
     runs-on: ${{ inputs.system-linux || 'ubuntu-latest' }}
       ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
@@ -47,5 +47,16 @@ jobs:
           ID_Base  : "${{ inputs.number-base }}"
         working-directory: Dispatch/
         run: |
-          echo "${ID_Base}"
-          echo "${ID_Base::-5}"
+          idstart="${ID_Base::-5}00000"
+          echo "${idstart}"
+          segments=$(
+            for seg in {0..5}
+              do
+                segment="${seg}000"
+                echo $((idstart + segment))
+              done |
+              jq --compact-output --slurp '.'
+          )
+          echo "segments=${segments}""
+            
+

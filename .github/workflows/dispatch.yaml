@@ -50,7 +50,6 @@ jobs:
         working-directory: Dispatch/
         run: |
           idstart="${ID_Base::-5}00000"
-          echo "${idstart}"
           segments=$(
             for seg in {0..5}
               do
@@ -62,9 +61,31 @@ jobs:
           )
           if [[ -n "${GITHUB_OUTPUT}" ]]
           then
-            echo "segments=${segments}" |
-              tee "${GITHUB_OUTPUT}"
+            echo "segments=${segments}"
+            echo "segments=${segments}" >> "${GITHUB_OUTPUT}"
           fi
 
+  job-matrex:
+
+    runs-on: ${{ inputs.system-linux || 'ubuntu-latest' }}
+      ## https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+      ## https://github.com/actions/runner-images/blob/main/images/ubuntu/Ubuntu2204-Readme.md
+    environment: CMS-DEMO
+    needs: job-cms-seed
+    strategy:
+      matrix:
+        segment: ${{ fromJSON(needs.job-cms-seed.outputs.segments) }}
+
+      - name: Checkout
+        uses: actions/checkout@v4
+          ## https://github.com/actions/checkout
+
+      - name: Segment Job
+        env:
+          URL_Prefix : "${{ secrets.PREFIX }}"
+          SEGMENT    : "${{ matrix.segment }}"
+        working-directory: Dispatch/
+        run: |
+          echo "${SEGMENT}"
 
 

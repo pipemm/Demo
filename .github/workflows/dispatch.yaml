@@ -27,7 +27,6 @@ on:
         type: number
         default: 3
 
-
 jobs:
 
   job-cms-seed:
@@ -56,7 +55,7 @@ jobs:
         working-directory: Dispatch/
         shell: bash
         run: |
-          for seg in {0..$((Thousands-1))}
+          for seg in {0..${Thousands}}
           do
              echo "${seg}"
           done
@@ -146,5 +145,5 @@ jobs:
         working-directory: Dispatch/
         shell: bash
         run: |
-          eche "test ${Number}"
+          echo "test ${Number}"
           ls segment/*.txt

@@ -21,12 +21,14 @@ fi
 
 folderlog='segment/'
 mkdir --parent "${folderlog%/}/"
-sname="segment-${Segment}"
+seg="${Segment}000"
+snumber=$(( Number + seg ))
+sname="segment-${snumber}"
 filelog="${folderlog%/}/${sname}.txt"
 
 for iid in {0..99}
 do
-  id=$(( Segment + iid ))
+  id=$(( snumber + iid ))
   url="${Prefix%/}/${id}"
   curl --silent --head "${url}" |
     sed --silent '/^content-disposition:/p' |

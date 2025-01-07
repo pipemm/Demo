@@ -50,21 +50,14 @@ jobs:
       - name: Seeds Generation
         id: seek
         env:
-          Number    : "${{ inputs.number-base }}"
-          Thousands : "${{ inputs.thousands }}"
+          Thousands : '${{ inputs.thousands }}'
         working-directory: Dispatch/
         shell: bash
         run: |
-          for seg in $(seq 0 "$((Thousands-1))")
-          do
-             echo "${seg}"
-          done
-          idstart="${Number::-5}00000"
           segments=$(
-            for seg in {0..3}
+            for seg in $(seq 0 $((Thousands-1)))
               do
-                segment="${seg}000"
-                echo $((idstart + segment))
+                echo "${seg}"
               done |
               jq --compact-output --slurp '.'
           )
@@ -146,4 +139,4 @@ jobs:
         shell: bash
         run: |
           echo "test ${Number}"
-          ls segment/*.txt
+          cat 'segment/*.txt'

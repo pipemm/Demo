@@ -9,7 +9,7 @@ on:
       system-linux:
         description: 'Linux Version'
         required: true
-        default: 'ubuntu-latest'
+        default: 'ubuntu-24.04'
         type: choice
         options:
         - ubuntu-latest
@@ -57,7 +57,6 @@ jobs:
                 segment="${seg}000"
                 echo $((idstart + segment))
               done |
-              jq --raw-input |
               jq --compact-output --slurp '.'
           )
           if [[ -n "${GITHUB_OUTPUT}" ]]
@@ -92,9 +91,11 @@ jobs:
         env:
           Prefix  : "${{ secrets.PREFIX }}"
           Segment : "${{ matrix.segment }}"
+          Segment2 : "${{ inputs.number-base + matrix.segment }}"
         working-directory: Dispatch/
         shell: bash
         run: |
+          eche "test ${Segment2}"
           bash search.sh
 
       - name: Upload Artifact
@@ -121,3 +122,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
           ## https://github.com/actions/checkout
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: Download Artifact
+          path: Dispatch/segment/
+          pattern: 'segment-*'
+          merge-multiple: true
+
+      - name: Segment Job
+        env:
+          Number : "${{ inputs.number-base }}"
+        working-directory: Dispatch/
+        shell: bash
+        run: |
+          eche "test ${Number}"
+          ls segment/*.txt

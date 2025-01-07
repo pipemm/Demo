@@ -141,3 +141,10 @@ jobs:
           mkdir --parent "${FolderResult%/}/"
           cat segment/*.txt
             tee "${FolderResult%/}/list.txt"
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+          ## https://github.com/actions/upload-artifact
+        with:
+          name: 'combine-${{ inputs.number-base }}'
+          path: Dispatch/combine/

@@ -91,21 +91,19 @@ jobs:
 
       - name: Segment Job
         env:
-          Prefix  : "${{ secrets.PREFIX }}"
+          Prefix  : '${{ secrets.PREFIX }}'
           Number  : '${{ inputs.number-base }}'
-          Segment : "${{ matrix.segment }}"
-          
+          Segment : '${{ matrix.segment }}'
         working-directory: Dispatch/
         shell: bash
         run: |
-          echo "test $((Number + Segment))"
           bash search.sh
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
           ## https://github.com/actions/upload-artifact
         with:
-          name: "${{ env.sname }}"
+          name: '${{ env.sname }}'
           path: Dispatch/segment/
 
   job-combine:
@@ -139,4 +137,7 @@ jobs:
         shell: bash
         run: |
           echo "test ${Number}"
-          cat 'segment/*.txt'
+          FolderResult='combine/'
+          mkdir --parent "${FolderResult%/}/"
+          cat segment/*.txt
+            tee "${FolderResult%/}/list.txt"

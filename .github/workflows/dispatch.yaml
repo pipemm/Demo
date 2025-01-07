@@ -21,6 +21,11 @@ on:
         required: true
         type: number
         default: 101015000
+      thousands:
+        description: 'Thousands'
+        required: true
+        type: number
+        default: 3
 
 
 jobs:
@@ -46,11 +51,16 @@ jobs:
       - name: Seeds Generation
         id: seek
         env:
-          ID_Base  : "${{ inputs.number-base }}"
+          Number    : "${{ inputs.number-base }}"
+          Thousands : "${{ inputs.thousands }}"
         working-directory: Dispatch/
         shell: bash
         run: |
-          idstart="${ID_Base::-5}00000"
+          for seg in {0..Thousands}
+          do
+             echo "${seg}"
+          done
+          idstart="${Number::-5}00000"
           segments=$(
             for seg in {0..3}
               do
@@ -96,7 +106,7 @@ jobs:
         working-directory: Dispatch/
         shell: bash
         run: |
-          eche "test $((Number + Segment))"
+          echo "test $((Number + Segment))"
           bash search.sh
 
       - name: Upload Artifact

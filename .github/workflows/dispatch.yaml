@@ -90,12 +90,13 @@ jobs:
       - name: Segment Job
         env:
           Prefix  : "${{ secrets.PREFIX }}"
+          Number  : '${{ inputs.number-base }}'
           Segment : "${{ matrix.segment }}"
-          Segment2 : "${{ inputs.number-base + matrix.segment }}"
+          
         working-directory: Dispatch/
         shell: bash
         run: |
-          eche "test ${Segment2}"
+          eche "test $((Number + Segment))"
           bash search.sh
 
       - name: Upload Artifact

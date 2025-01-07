@@ -9,6 +9,11 @@ then
   exit 1
 fi
 
+if [[ ! -n "${Number}" ]]
+then
+  exit 1
+fi
+
 if [[ ! -n "${Segment}" ]]
 then
   exit 1

@@ -55,7 +55,7 @@ jobs:
         working-directory: Dispatch/
         shell: bash
         run: |
-          for seg in {0..${Thousands}}
+          for seg in $(seq 0 "$((Thousands-1))")
           do
              echo "${seg}"
           done

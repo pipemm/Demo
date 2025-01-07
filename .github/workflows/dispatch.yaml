@@ -20,7 +20,7 @@ on:
         description: 'Base Number'
         required: true
         type: number
-        default: 101015000
+        default: 101000000
       thousands:
         description: 'Thousands'
         required: true
@@ -139,7 +139,7 @@ jobs:
           echo "test ${Number}"
           FolderResult='combine/'
           mkdir --parent "${FolderResult%/}/"
-          cat segment/*.txt
+          cat segment/*.txt |
             tee "${FolderResult%/}/list.txt"
 
       - name: Upload Artifact

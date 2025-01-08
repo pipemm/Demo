@@ -10,6 +10,7 @@ curl --location \
   sed --silent 's/^segment-[0-9]*\t//p' |
   while read -r artifact_id
   do
+    sleep 0.1s
     curl --location \
       --request DELETE \
       --header 'Accept: application/vnd.github+json' \

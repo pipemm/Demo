@@ -117,6 +117,8 @@ jobs:
       run:
         shell: bash
           ## https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#jobsjob_iddefaultsrunshell
+    permissions:
+      actions: write
     
     steps:
 

@@ -131,8 +131,6 @@ jobs:
           merge-multiple: true
 
       - name: Combine
-        env:
-          Number : "${{ inputs.number-base }}"
         working-directory: Dispatch/
         shell: bash
         run: |
@@ -147,7 +145,7 @@ jobs:
 
       - name: Clean Up
         env:
-          Number : "${{ inputs.number-base }}"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         working-directory: Dispatch/
         shell: bash
         run: |

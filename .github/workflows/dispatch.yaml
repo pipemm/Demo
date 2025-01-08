@@ -130,17 +130,13 @@ jobs:
           pattern: 'segment-*'
           merge-multiple: true
 
-      - name: Segment Job
+      - name: Combine
         env:
           Number : "${{ inputs.number-base }}"
         working-directory: Dispatch/
         shell: bash
         run: |
-          echo "test ${Number}"
-          FolderResult='combine/'
-          mkdir --parent "${FolderResult%/}/"
-          cat segment/*.txt |
-            tee "${FolderResult%/}/list.txt"
+          bash combine.sh
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
@@ -148,3 +144,17 @@ jobs:
         with:
           name: 'combine-${{ inputs.number-base }}'
           path: Dispatch/combine/
+
+      - name: Clean Up
+        env:
+          Number : "${{ inputs.number-base }}"
+        working-directory: Dispatch/
+        shell: bash
+        run: |
+          curl --location \
+            --header 'Accept: application/vnd.github+json' \
+            --header "Authorization: Bearer ${GITHUB_TOKEN}" \
+            --header 'X-GitHub-Api-Version: 2022-11-28' \
+            https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/artifacts |
+            jq
+

@@ -26,7 +26,7 @@ snumber=$(( Number + seg ))
 sname="segment-${snumber}"
 filelog="${folderlog%/}/${sname}.txt"
 
-for iid in {0..999}
+for iid in {0..9}
 do
   id=$(( snumber + iid ))
   url="${Prefix%/}/${id}"

@@ -144,8 +144,8 @@ jobs:
           path: Dispatch/combine/
 
       - name: Clean Up
-        #env:
-        #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         working-directory: Dispatch/
         shell: bash
         run: |

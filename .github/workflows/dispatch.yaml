@@ -169,7 +169,7 @@ jobs:
         working-directory: Dispatch/
         shell: bash
         run: |
-          bash cleanup.sh
+          bash cleanup-more.sh
 
 
 

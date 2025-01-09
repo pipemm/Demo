@@ -170,8 +170,6 @@ jobs:
         shell: bash
         run: |
           bash cleanup.sh
-          bash cleanup.sh
-          bash cleanup.sh
 
 
 

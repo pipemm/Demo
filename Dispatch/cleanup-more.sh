@@ -10,11 +10,20 @@ curl --location \
   --header 'Accept: application/vnd.github+json' \
   --header "Authorization: Bearer ${GITHUB_TOKEN}" \
   --header 'X-GitHub-Api-Version: 2022-11-28' \
+  --dump-header >(
+    sed --silent 's/^link: //p' |
+    while IFS=',' read -r -a paginators
+    do
+      for paginator in "${paginators[@]}"; do
+        echo "${paginator}"
+      done
+    done > header.txt
+    ) \
   "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/artifacts" |
   jq '[.artifacts[] | [.name,.id]]' |
   jq --raw-output '.[] | @tsv' > "${filelist}"
 
-cat "${filelist}" |
+echo cat "${filelist}" |
   sed --silent '/^segment-[0-9]\+\t/p' |
   sed 's/\t/ /' |
   while read -r line

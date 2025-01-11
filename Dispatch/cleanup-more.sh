@@ -1,29 +1,36 @@
 #!/usr/bin/bash
 
-thisscript=$(realpath --canonicalize-existing "${0}")
-thispath="${thisscript%/*}/"
-cd "${thispath}"
-
-filelist='artifactlist.txt'
-
-curl --location \
-  --header 'Accept: application/vnd.github+json' \
-  --header "Authorization: Bearer ${GITHUB_TOKEN}" \
-  --header 'X-GitHub-Api-Version: 2022-11-28' \
-  --dump-header >(
-    sed --silent 's/^link: //p' |
-    while IFS=',' read -r -a paginators
-    do
-      for paginator in "${paginators[@]}"; do
-        echo "${paginator}"
+function paginator() {
+  local url=${1}
+  curl --location \
+    --header 'Accept: application/vnd.github+json' \
+    --header "Authorization: Bearer ${GITHUB_TOKEN}" \
+    --header 'X-GitHub-Api-Version: 2022-11-28' \
+    --dump-header >(
+      sed --silent 's/^link://p' |
+      while IFS=',' read -r -a paginators
+      do
+        for pp in "${paginators[@]}"
+        do
+          echo "${pp}"
+        done |
+        sed --silent '/ rel="next"$/p' |
+        sed --silent 's/^\s*<\(.*\)>;.*$/\1/p'
+      done |
+      head --lines=1 |
+      while read -r nextpage
+      do
+        paginator "${nextpage}"
       done
-    done > header.txt
-    ) \
-  "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/artifacts" |
-  jq '[.artifacts[] | [.name,.id]]' |
-  jq --raw-output '.[] | @tsv' > "${filelist}"
+      ) \
+    "${url}" \
+    --output >(
+      jq '[.artifacts[] | [.name,.id]]' |
+      jq --raw-output '.[] | @tsv'
+    )
+}
 
-echo cat "${filelist}" |
+paginator "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/artifacts" |
   sed --silent '/^segment-[0-9]\+\t/p' |
   sed 's/\t/ /' |
   while read -r line
